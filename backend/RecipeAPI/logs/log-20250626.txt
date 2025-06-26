@@ -1,0 +1,684 @@
+2025-06-26 17:33:52.855 +03:00 [WRN] No store type was specified for the decimal property 'Miktar' on entity type 'RecipeIngredient'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-26 17:34:20.266 +03:00 [WRN] No store type was specified for the decimal property 'Miktar' on entity type 'RecipeIngredient'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-26 17:52:36.088 +03:00 [WRN] No store type was specified for the decimal property 'Miktar' on entity type 'RecipeIngredient'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-26 17:53:47.390 +03:00 [WRN] No store type was specified for the decimal property 'Miktar' on entity type 'RecipeIngredient'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-26 17:54:05.328 +03:00 [WRN] No store type was specified for the decimal property 'Miktar' on entity type 'RecipeIngredient'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-06-26 17:57:02.138 +03:00 [INF] Executed DbCommand (1,346ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [RecipeDB];
+2025-06-26 17:57:02.942 +03:00 [INF] Executed DbCommand (695ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [RecipeDB] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2025-06-26 17:57:03.030 +03:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-26 17:57:03.039 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-06-26 17:57:03.097 +03:00 [INF] Executed DbCommand (53ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-06-26 17:57:03.272 +03:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-06-26 17:57:03.336 +03:00 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-26 17:57:03.341 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-06-26 17:57:03.366 +03:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-06-26 17:57:03.415 +03:00 [INF] Applying migration '20250626145621_BaslangicMigration'.
+2025-06-26 17:57:03.527 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Kategoriler] (
+    [Id] int NOT NULL IDENTITY,
+    [Ad] nvarchar(max) NOT NULL,
+    [Aciklama] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Kategoriler] PRIMARY KEY ([Id])
+);
+2025-06-26 17:57:03.533 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Kullanicilar] (
+    [Id] int NOT NULL IDENTITY,
+    [KullaniciAdi] nvarchar(max) NOT NULL,
+    [Email] nvarchar(max) NOT NULL,
+    [Sifre] nvarchar(max) NOT NULL,
+    [AdSoyad] nvarchar(max) NOT NULL,
+    [KayitTarihi] datetime2 NOT NULL,
+    [AktifMi] bit NOT NULL,
+    CONSTRAINT [PK_Kullanicilar] PRIMARY KEY ([Id])
+);
+2025-06-26 17:57:03.547 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Tarifler] (
+    [Id] int NOT NULL IDENTITY,
+    [Baslik] nvarchar(max) NOT NULL,
+    [Aciklama] nvarchar(max) NOT NULL,
+    [Talimatlar] nvarchar(max) NOT NULL,
+    [HazirlamaSuresi] int NOT NULL,
+    [PisirmeSuresi] int NOT NULL,
+    [KacKisilik] int NOT NULL,
+    [ZorlukSeviyesi] nvarchar(max) NOT NULL,
+    [EklenmeTarihi] datetime2 NOT NULL,
+    [GuncellenmeTarihi] datetime2 NULL,
+    [KullaniciId] int NOT NULL,
+    [KategoriId] int NOT NULL,
+    CONSTRAINT [PK_Tarifler] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Tarifler_Kategoriler_KategoriId] FOREIGN KEY ([KategoriId]) REFERENCES [Kategoriler] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Tarifler_Kullanicilar_KullaniciId] FOREIGN KEY ([KullaniciId]) REFERENCES [Kullanicilar] ([Id]) ON DELETE CASCADE
+);
+2025-06-26 17:57:03.573 +03:00 [ERR] Failed executing DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Degerlendirmeler] (
+    [Id] int NOT NULL IDENTITY,
+    [Puan] int NOT NULL,
+    [DegerlendirmeTarihi] datetime2 NOT NULL,
+    [KullaniciId] int NOT NULL,
+    [TarifId] int NOT NULL,
+    CONSTRAINT [PK_Degerlendirmeler] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Degerlendirmeler_Kullanicilar_KullaniciId] FOREIGN KEY ([KullaniciId]) REFERENCES [Kullanicilar] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Degerlendirmeler_Tarifler_TarifId] FOREIGN KEY ([TarifId]) REFERENCES [Tarifler] ([Id]) ON DELETE CASCADE
+);
+2025-06-26 17:59:09.416 +03:00 [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-26 17:59:09.600 +03:00 [INF] Executed DbCommand (31ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-06-26 17:59:09.642 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-06-26 17:59:54.568 +03:00 [INF] Executed DbCommand (44ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-26 17:59:54.681 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-06-26 17:59:54.711 +03:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-06-26 17:59:54.842 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-06-26 17:59:54.860 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-26 17:59:54.863 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-06-26 17:59:54.869 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-06-26 17:59:54.889 +03:00 [INF] Applying migration '20250626145930_BaslangicMigration'.
+2025-06-26 17:59:54.955 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Kategoriler] (
+    [Id] int NOT NULL IDENTITY,
+    [Ad] nvarchar(max) NOT NULL,
+    [Aciklama] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Kategoriler] PRIMARY KEY ([Id])
+);
+2025-06-26 17:59:54.959 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Kullanicilar] (
+    [Id] int NOT NULL IDENTITY,
+    [KullaniciAdi] nvarchar(max) NOT NULL,
+    [Email] nvarchar(max) NOT NULL,
+    [Sifre] nvarchar(max) NOT NULL,
+    [AdSoyad] nvarchar(max) NOT NULL,
+    [KayitTarihi] datetime2 NOT NULL,
+    [AktifMi] bit NOT NULL,
+    CONSTRAINT [PK_Kullanicilar] PRIMARY KEY ([Id])
+);
+2025-06-26 17:59:54.965 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Tarifler] (
+    [Id] int NOT NULL IDENTITY,
+    [Baslik] nvarchar(max) NOT NULL,
+    [Aciklama] nvarchar(max) NOT NULL,
+    [Talimatlar] nvarchar(max) NOT NULL,
+    [HazirlamaSuresi] int NOT NULL,
+    [PisirmeSuresi] int NOT NULL,
+    [KacKisilik] int NOT NULL,
+    [ZorlukSeviyesi] nvarchar(max) NOT NULL,
+    [EklenmeTarihi] datetime2 NOT NULL,
+    [GuncellenmeTarihi] datetime2 NULL,
+    [KullaniciId] int NOT NULL,
+    [KategoriId] int NOT NULL,
+    CONSTRAINT [PK_Tarifler] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Tarifler_Kategoriler_KategoriId] FOREIGN KEY ([KategoriId]) REFERENCES [Kategoriler] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Tarifler_Kullanicilar_KullaniciId] FOREIGN KEY ([KullaniciId]) REFERENCES [Kullanicilar] ([Id]) ON DELETE CASCADE
+);
+2025-06-26 17:59:54.972 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Degerlendirmeler] (
+    [Id] int NOT NULL IDENTITY,
+    [Puan] int NOT NULL,
+    [DegerlendirmeTarihi] datetime2 NOT NULL,
+    [KullaniciId] int NOT NULL,
+    [TarifId] int NOT NULL,
+    CONSTRAINT [PK_Degerlendirmeler] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Degerlendirmeler_Kullanicilar_KullaniciId] FOREIGN KEY ([KullaniciId]) REFERENCES [Kullanicilar] ([Id]),
+    CONSTRAINT [FK_Degerlendirmeler_Tarifler_TarifId] FOREIGN KEY ([TarifId]) REFERENCES [Tarifler] ([Id]) ON DELETE CASCADE
+);
+2025-06-26 17:59:54.977 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [TarifMalzemeler] (
+    [Id] int NOT NULL IDENTITY,
+    [MalzemeAdi] nvarchar(max) NOT NULL,
+    [Miktar] decimal(10,2) NOT NULL,
+    [Birim] nvarchar(max) NOT NULL,
+    [TarifId] int NOT NULL,
+    CONSTRAINT [PK_TarifMalzemeler] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_TarifMalzemeler_Tarifler_TarifId] FOREIGN KEY ([TarifId]) REFERENCES [Tarifler] ([Id]) ON DELETE CASCADE
+);
+2025-06-26 17:59:54.983 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [TarifResimleri] (
+    [Id] int NOT NULL IDENTITY,
+    [DosyaAdi] nvarchar(max) NOT NULL,
+    [DosyaYolu] nvarchar(max) NOT NULL,
+    [AnaResimMi] bit NOT NULL,
+    [TarifId] int NOT NULL,
+    CONSTRAINT [PK_TarifResimleri] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_TarifResimleri_Tarifler_TarifId] FOREIGN KEY ([TarifId]) REFERENCES [Tarifler] ([Id]) ON DELETE CASCADE
+);
+2025-06-26 17:59:54.990 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Yorumlar] (
+    [Id] int NOT NULL IDENTITY,
+    [Yorum] nvarchar(max) NOT NULL,
+    [YorumTarihi] datetime2 NOT NULL,
+    [KullaniciId] int NOT NULL,
+    [TarifId] int NOT NULL,
+    CONSTRAINT [PK_Yorumlar] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Yorumlar_Kullanicilar_KullaniciId] FOREIGN KEY ([KullaniciId]) REFERENCES [Kullanicilar] ([Id]),
+    CONSTRAINT [FK_Yorumlar_Tarifler_TarifId] FOREIGN KEY ([TarifId]) REFERENCES [Tarifler] ([Id]) ON DELETE CASCADE
+);
+2025-06-26 17:59:55.002 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Degerlendirmeler_KullaniciId_TarifId] ON [Degerlendirmeler] ([KullaniciId], [TarifId]);
+2025-06-26 17:59:55.004 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Degerlendirmeler_TarifId] ON [Degerlendirmeler] ([TarifId]);
+2025-06-26 17:59:55.007 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Tarifler_KategoriId] ON [Tarifler] ([KategoriId]);
+2025-06-26 17:59:55.010 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Tarifler_KullaniciId] ON [Tarifler] ([KullaniciId]);
+2025-06-26 17:59:55.015 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_TarifMalzemeler_TarifId] ON [TarifMalzemeler] ([TarifId]);
+2025-06-26 17:59:55.020 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_TarifResimleri_TarifId] ON [TarifResimleri] ([TarifId]);
+2025-06-26 17:59:55.023 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Yorumlar_KullaniciId] ON [Yorumlar] ([KullaniciId]);
+2025-06-26 17:59:55.026 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Yorumlar_TarifId] ON [Yorumlar] ([TarifId]);
+2025-06-26 17:59:55.030 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250626145930_BaslangicMigration', N'9.0.6');
+2025-06-26 17:59:55.044 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-06-26 18:00:47.469 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-06-26 18:00:52.254 +03:00 [INF] Executed DbCommand (122ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-26 18:00:52.387 +03:00 [INF] Executed DbCommand (73ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-26 18:00:52.391 +03:00 [INF] Veritabanı kontrol edildi.
+2025-06-26 18:00:52.591 +03:00 [INF] Now listening on: http://localhost:5124
+2025-06-26 18:00:52.630 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-26 18:00:52.632 +03:00 [INF] Hosting environment: Development
+2025-06-26 18:00:52.635 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/tarif-paylasim-platformu/backend/RecipeAPI
+2025-06-26 18:01:37.008 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5124/swagger - null null
+2025-06-26 18:01:37.181 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5124/swagger - 301 0 null 188.0643ms
+2025-06-26 18:01:37.238 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5124/swagger/index.html - null null
+2025-06-26 18:01:37.634 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5124/swagger/index.html - 200 null text/html;charset=utf-8 395.063ms
+2025-06-26 18:01:37.743 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5124/swagger/swagger-ui.css - null null
+2025-06-26 18:01:37.754 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5124/swagger/index.css - null null
+2025-06-26 18:01:37.755 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5124/swagger/swagger-ui-bundle.js - null null
+2025-06-26 18:01:37.758 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5124/swagger/swagger-ui-standalone-preset.js - null null
+2025-06-26 18:01:37.758 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5124/swagger/index.js - null null
+2025-06-26 18:01:37.762 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5124/swagger/index.js - 200 null application/javascript;charset=utf-8 3.5197ms
+2025-06-26 18:01:37.816 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-06-26 18:01:37.823 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5124/swagger/index.css - 200 202 text/css 68.3331ms
+2025-06-26 18:01:37.851 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-06-26 18:01:37.876 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-06-26 18:01:37.883 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5124/swagger/swagger-ui.css - 200 154949 text/css 140.0504ms
+2025-06-26 18:01:37.918 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5124/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 133.5908ms
+2025-06-26 18:01:37.923 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-06-26 18:01:37.926 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5124/swagger/swagger-ui-bundle.js - 200 1485241 text/javascript 170.23ms
+2025-06-26 18:01:38.307 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5124/swagger/v1/swagger.json - null null
+2025-06-26 18:01:38.412 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5124/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 104.7386ms
+2025-06-26 18:01:39.372 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5124/swagger/favicon-32x32.png - null null
+2025-06-26 18:01:39.373 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-06-26 18:01:39.374 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5124/swagger/favicon-32x32.png - 200 628 image/png 1.5622ms
+2025-06-26 18:37:13.118 +03:00 [INF] Application is shutting down...
+meters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-26 18:06:37.802 +03:00 [INF] Executed DbCommand (486ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-26 18:06:37.839 +03:00 [INF] Veritabanı kontrol edildi.
+2025-06-26 18:06:38.869 +03:00 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5124: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-06-26 18:07:23.402 +03:00 [INF] Executed DbCommand (47ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-26 18:07:24.028 +03:00 [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-26 18:07:24.048 +03:00 [INF] Veritabanı kontrol edildi.
+2025-06-26 18:07:24.258 +03:00 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5124: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-06-26 18:09:09.025 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-26 18:09:09.176 +03:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-26 18:09:09.178 +03:00 [INF] Veritabanı kontrol edildi.
+2025-06-26 18:09:09.296 +03:00 [INF] Now listening on: http://localhost:5300
+2025-06-26 18:09:09.305 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-26 18:09:09.308 +03:00 [INF] Hosting environment: Development
+2025-06-26 18:09:09.309 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/tarif-paylasim-platformu/backend/RecipeAPI
+2025-06-26 18:09:23.186 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/ - null null
+2025-06-26 18:09:23.468 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-26 18:09:23.508 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/ - 404 0 null 324.0838ms
+2025-06-26 18:09:23.744 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5300/, Response status code: 404
+2025-06-26 18:09:31.022 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger - null null
+2025-06-26 18:09:31.030 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger - 301 0 null 7.721ms
+2025-06-26 18:09:31.107 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger/index.html - null null
+2025-06-26 18:09:31.613 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger/index.html - 200 null text/html;charset=utf-8 506.2592ms
+2025-06-26 18:09:31.669 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger/swagger-ui.css - null null
+2025-06-26 18:09:31.672 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger/swagger-ui-bundle.js - null null
+2025-06-26 18:09:31.677 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger/swagger-ui-standalone-preset.js - null null
+2025-06-26 18:09:31.688 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger/index.css - null null
+2025-06-26 18:09:31.688 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger/index.js - null null
+2025-06-26 18:09:31.716 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger/index.js - 200 null application/javascript;charset=utf-8 27.5698ms
+2025-06-26 18:09:31.731 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-06-26 18:09:31.732 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger/index.css - 200 202 text/css 44.3592ms
+2025-06-26 18:09:31.746 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-06-26 18:09:31.746 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-06-26 18:09:31.753 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger/swagger-ui.css - 200 154949 text/css 83.6474ms
+2025-06-26 18:09:31.753 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 75.1346ms
+2025-06-26 18:09:31.811 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-06-26 18:09:31.819 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger/swagger-ui-bundle.js - 200 1485241 text/javascript 146.2712ms
+2025-06-26 18:09:32.543 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - null null
+2025-06-26 18:09:33.683 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger/favicon-32x32.png - null null
+2025-06-26 18:09:33.684 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-06-26 18:09:33.685 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger/favicon-32x32.png - 200 628 image/png 1.0659ms
+2025-06-26 18:09:33.704 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 1160.5012ms
+2025-06-26 18:10:21.678 +03:00 [INF] Application is shutting down...
+2025-06-26 18:11:58.856 +03:00 [INF] Executed DbCommand (47ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-26 18:11:59.022 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-26 18:11:59.024 +03:00 [INF] Veritabanı kontrol edildi.
+2025-06-26 18:11:59.138 +03:00 [INF] Now listening on: http://localhost:5300
+2025-06-26 18:11:59.142 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-26 18:11:59.143 +03:00 [INF] Hosting environment: Development
+2025-06-26 18:11:59.144 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/tarif-paylasim-platformu/backend/RecipeAPI
+2025-06-26 18:12:20.528 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - null null
+2025-06-26 18:12:20.873 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 348.0426ms
+2025-06-26 18:13:23.245 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/ - null null
+2025-06-26 18:13:23.269 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-26 18:13:23.347 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/ - 404 0 null 102.6177ms
+2025-06-26 18:13:23.361 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5300/, Response status code: 404
+2025-06-26 18:13:28.879 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - null null
+2025-06-26 18:13:28.908 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 29.3377ms
+2025-06-26 18:14:13.681 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Categories - application/json 82
+2025-06-26 18:14:13.700 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.CategoriesController.PostCategory (RecipeAPI)'
+2025-06-26 18:14:13.796 +03:00 [INF] Route matched with {action = "PostCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[RecipeAPI.Models.Entities.Category]] PostCategory(RecipeAPI.Models.Entities.Category) on controller RecipeAPI.Controllers.CategoriesController (RecipeAPI).
+2025-06-26 18:14:14.322 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-06-26 18:14:14.441 +03:00 [INF] Executed action RecipeAPI.Controllers.CategoriesController.PostCategory (RecipeAPI) in 636.976ms
+2025-06-26 18:14:14.441 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.CategoriesController.PostCategory (RecipeAPI)'
+2025-06-26 18:14:14.444 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Categories - 400 null application/problem+json; charset=utf-8 762.7334ms
+2025-06-26 18:18:17.499 +03:00 [INF] Application is shutting down...
+2025-06-26 18:18:51.602 +03:00 [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-26 18:18:51.809 +03:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-26 18:18:51.812 +03:00 [INF] Veritabanı kontrol edildi.
+2025-06-26 18:18:51.959 +03:00 [INF] Now listening on: http://localhost:5300
+2025-06-26 18:18:51.973 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-26 18:18:51.976 +03:00 [INF] Hosting environment: Development
+2025-06-26 18:18:51.977 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/tarif-paylasim-platformu/backend/RecipeAPI
+2025-06-26 18:18:58.118 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/ - null null
+2025-06-26 18:18:58.493 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-26 18:18:58.556 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/ - 404 0 null 461.8046ms
+2025-06-26 18:18:58.947 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5300/, Response status code: 404
+2025-06-26 18:19:04.138 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - null null
+2025-06-26 18:19:04.436 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 298.5568ms
+2025-06-26 18:19:21.591 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Categories - application/json 82
+2025-06-26 18:19:21.622 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.CategoriesController.PostCategory (RecipeAPI)'
+2025-06-26 18:19:21.693 +03:00 [INF] Route matched with {action = "PostCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[RecipeAPI.Models.DTOs.CategoryDto]] PostCategory(RecipeAPI.Models.DTOs.CreateCategoryDto) on controller RecipeAPI.Controllers.CategoriesController (RecipeAPI).
+2025-06-26 18:19:22.871 +03:00 [INF] Executed DbCommand (203ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Kategoriler] ([Aciklama], [Ad])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1);
+2025-06-26 18:19:22.980 +03:00 [INF] Yeni kategori oluşturuldu: Ana Yemekler
+2025-06-26 18:19:23.023 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'RecipeAPI.Models.DTOs.CategoryDto'.
+2025-06-26 18:19:23.269 +03:00 [INF] Executed action RecipeAPI.Controllers.CategoriesController.PostCategory (RecipeAPI) in 1563.0208ms
+2025-06-26 18:19:23.274 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.CategoriesController.PostCategory (RecipeAPI)'
+2025-06-26 18:19:23.621 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Categories - 201 null application/json; charset=utf-8 2030.0849ms
+2025-06-26 18:23:24.157 +03:00 [INF] Application is shutting down...
+2025-06-26 18:29:28.581 +03:00 [INF] Executed DbCommand (44ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-26 18:29:28.913 +03:00 [INF] Executed DbCommand (80ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-26 18:29:28.917 +03:00 [INF] Veritabanı kontrol edildi.
+2025-06-26 18:29:29.035 +03:00 [INF] User profile is available. Using '/Users/mislinakotuyebakmaz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-26 18:29:29.209 +03:00 [INF] Now listening on: http://localhost:5300
+2025-06-26 18:29:29.223 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-26 18:29:29.232 +03:00 [INF] Hosting environment: Development
+2025-06-26 18:29:29.234 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/tarif-paylasim-platformu/backend/RecipeAPI
+2025-06-26 18:29:37.376 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/ - null null
+2025-06-26 18:29:37.536 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-26 18:29:37.695 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/ - 404 0 null 325.3889ms
+2025-06-26 18:29:37.938 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5300/, Response status code: 404
+2025-06-26 18:29:43.933 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - null null
+2025-06-26 18:29:44.267 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 334.3806ms
+2025-06-26 18:31:01.335 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Auth/register - application/json 119
+2025-06-26 18:31:01.409 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.AuthController.Register (RecipeAPI)'
+2025-06-26 18:31:01.503 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[RecipeAPI.Models.DTOs.LoginResponseDto]] Register(RecipeAPI.Models.DTOs.RegisterDto) on controller RecipeAPI.Controllers.AuthController (RecipeAPI).
+2025-06-26 18:31:02.869 +03:00 [INF] Executed DbCommand (165ms) [Parameters=[@__registerDto_KullaniciAdi_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Kullanicilar] AS [k]
+        WHERE [k].[KullaniciAdi] = @__registerDto_KullaniciAdi_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-26 18:31:02.952 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[@__registerDto_Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Kullanicilar] AS [k]
+        WHERE [k].[Email] = @__registerDto_Email_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-26 18:31:03.596 +03:00 [INF] Executed DbCommand (60ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Kullanicilar] ([AdSoyad], [AktifMi], [Email], [KayitTarihi], [KullaniciAdi], [Sifre])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2025-06-26 18:31:03.775 +03:00 [INF] Yeni kullanıcı kaydı oluşturuldu: testuser
+2025-06-26 18:31:03.884 +03:00 [INF] Executing OkObjectResult, writing value of type 'RecipeAPI.Models.DTOs.LoginResponseDto'.
+2025-06-26 18:31:03.965 +03:00 [INF] Executed action RecipeAPI.Controllers.AuthController.Register (RecipeAPI) in 2457.0451ms
+2025-06-26 18:31:03.967 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.AuthController.Register (RecipeAPI)'
+2025-06-26 18:31:04.063 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Auth/register - 200 null application/json; charset=utf-8 2728.4031ms
+2025-06-26 18:31:22.904 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Auth/login - application/json 64
+2025-06-26 18:31:22.932 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.AuthController.Login (RecipeAPI)'
+2025-06-26 18:31:22.971 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[RecipeAPI.Models.DTOs.LoginResponseDto]] Login(RecipeAPI.Models.DTOs.LoginDto) on controller RecipeAPI.Controllers.AuthController (RecipeAPI).
+2025-06-26 18:31:24.678 +03:00 [INF] Executed DbCommand (129ms) [Parameters=[@__loginDto_KullaniciAdiVeyaEmail_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [k].[Id], [k].[AdSoyad], [k].[AktifMi], [k].[Email], [k].[KayitTarihi], [k].[KullaniciAdi], [k].[Sifre]
+FROM [Kullanicilar] AS [k]
+WHERE [k].[KullaniciAdi] = @__loginDto_KullaniciAdiVeyaEmail_0 OR [k].[Email] = @__loginDto_KullaniciAdiVeyaEmail_0
+2025-06-26 18:31:24.725 +03:00 [INF] Kullanıcı giriş yaptı: testuser
+2025-06-26 18:31:24.864 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tarifler] AS [t]
+WHERE [t].[KullaniciId] = @__user_Id_0
+2025-06-26 18:31:24.879 +03:00 [INF] Executing OkObjectResult, writing value of type 'RecipeAPI.Models.DTOs.LoginResponseDto'.
+2025-06-26 18:31:24.882 +03:00 [INF] Executed action RecipeAPI.Controllers.AuthController.Login (RecipeAPI) in 1900.7761ms
+2025-06-26 18:31:24.937 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.AuthController.Login (RecipeAPI)'
+2025-06-26 18:31:24.938 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Auth/login - 200 null application/json; charset=utf-8 2033.3061ms
+2025-06-26 18:31:50.010 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Auth/login - application/json 72
+2025-06-26 18:31:50.011 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.AuthController.Login (RecipeAPI)'
+2025-06-26 18:31:50.011 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[RecipeAPI.Models.DTOs.LoginResponseDto]] Login(RecipeAPI.Models.DTOs.LoginDto) on controller RecipeAPI.Controllers.AuthController (RecipeAPI).
+2025-06-26 18:31:50.047 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[@__loginDto_KullaniciAdiVeyaEmail_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [k].[Id], [k].[AdSoyad], [k].[AktifMi], [k].[Email], [k].[KayitTarihi], [k].[KullaniciAdi], [k].[Sifre]
+FROM [Kullanicilar] AS [k]
+WHERE [k].[KullaniciAdi] = @__loginDto_KullaniciAdiVeyaEmail_0 OR [k].[Email] = @__loginDto_KullaniciAdiVeyaEmail_0
+2025-06-26 18:31:50.050 +03:00 [INF] Kullanıcı giriş yaptı: testuser
+2025-06-26 18:31:50.069 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tarifler] AS [t]
+WHERE [t].[KullaniciId] = @__user_Id_0
+2025-06-26 18:31:50.071 +03:00 [INF] Executing OkObjectResult, writing value of type 'RecipeAPI.Models.DTOs.LoginResponseDto'.
+2025-06-26 18:31:50.078 +03:00 [INF] Executed action RecipeAPI.Controllers.AuthController.Login (RecipeAPI) in 66.1225ms
+2025-06-26 18:31:50.079 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.AuthController.Login (RecipeAPI)'
+2025-06-26 18:31:50.082 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Auth/login - 200 null application/json; charset=utf-8 72.4798ms
+2025-06-26 18:31:54.747 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Auth/login - application/json 72
+2025-06-26 18:31:54.748 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.AuthController.Login (RecipeAPI)'
+2025-06-26 18:31:54.748 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[RecipeAPI.Models.DTOs.LoginResponseDto]] Login(RecipeAPI.Models.DTOs.LoginDto) on controller RecipeAPI.Controllers.AuthController (RecipeAPI).
+2025-06-26 18:31:54.765 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[@__loginDto_KullaniciAdiVeyaEmail_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [k].[Id], [k].[AdSoyad], [k].[AktifMi], [k].[Email], [k].[KayitTarihi], [k].[KullaniciAdi], [k].[Sifre]
+FROM [Kullanicilar] AS [k]
+WHERE [k].[KullaniciAdi] = @__loginDto_KullaniciAdiVeyaEmail_0 OR [k].[Email] = @__loginDto_KullaniciAdiVeyaEmail_0
+2025-06-26 18:31:54.767 +03:00 [INF] Kullanıcı giriş yaptı: testuser
+2025-06-26 18:31:54.781 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tarifler] AS [t]
+WHERE [t].[KullaniciId] = @__user_Id_0
+2025-06-26 18:31:54.782 +03:00 [INF] Executing OkObjectResult, writing value of type 'RecipeAPI.Models.DTOs.LoginResponseDto'.
+2025-06-26 18:31:54.782 +03:00 [INF] Executed action RecipeAPI.Controllers.AuthController.Login (RecipeAPI) in 33.3649ms
+2025-06-26 18:31:54.785 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.AuthController.Login (RecipeAPI)'
+2025-06-26 18:31:54.785 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Auth/login - 200 null application/json; charset=utf-8 37.9049ms
+2025-06-26 18:32:12.647 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Auth/login - application/json 69
+2025-06-26 18:32:12.648 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.AuthController.Login (RecipeAPI)'
+2025-06-26 18:32:12.648 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[RecipeAPI.Models.DTOs.LoginResponseDto]] Login(RecipeAPI.Models.DTOs.LoginDto) on controller RecipeAPI.Controllers.AuthController (RecipeAPI).
+2025-06-26 18:32:12.677 +03:00 [INF] Executed DbCommand (26ms) [Parameters=[@__loginDto_KullaniciAdiVeyaEmail_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [k].[Id], [k].[AdSoyad], [k].[AktifMi], [k].[Email], [k].[KayitTarihi], [k].[KullaniciAdi], [k].[Sifre]
+FROM [Kullanicilar] AS [k]
+WHERE [k].[KullaniciAdi] = @__loginDto_KullaniciAdiVeyaEmail_0 OR [k].[Email] = @__loginDto_KullaniciAdiVeyaEmail_0
+2025-06-26 18:32:12.679 +03:00 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-26 18:32:12.680 +03:00 [INF] Executed action RecipeAPI.Controllers.AuthController.Login (RecipeAPI) in 32.4562ms
+2025-06-26 18:32:12.681 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.AuthController.Login (RecipeAPI)'
+2025-06-26 18:32:12.681 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Auth/login - 401 null text/plain; charset=utf-8 34.7044ms
+2025-06-26 18:33:08.641 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Auth/register - application/json 111
+2025-06-26 18:33:08.646 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.AuthController.Register (RecipeAPI)'
+2025-06-26 18:33:08.651 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[RecipeAPI.Models.DTOs.LoginResponseDto]] Register(RecipeAPI.Models.DTOs.RegisterDto) on controller RecipeAPI.Controllers.AuthController (RecipeAPI).
+2025-06-26 18:33:08.705 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[@__registerDto_KullaniciAdi_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Kullanicilar] AS [k]
+        WHERE [k].[KullaniciAdi] = @__registerDto_KullaniciAdi_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-26 18:33:08.718 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[@__registerDto_Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Kullanicilar] AS [k]
+        WHERE [k].[Email] = @__registerDto_Email_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-26 18:33:08.765 +03:00 [INF] Executed DbCommand (35ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Kullanicilar] ([AdSoyad], [AktifMi], [Email], [KayitTarihi], [KullaniciAdi], [Sifre])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2025-06-26 18:33:08.767 +03:00 [INF] Yeni kullanıcı kaydı oluşturuldu: elif
+2025-06-26 18:33:08.767 +03:00 [INF] Executing OkObjectResult, writing value of type 'RecipeAPI.Models.DTOs.LoginResponseDto'.
+2025-06-26 18:33:08.767 +03:00 [INF] Executed action RecipeAPI.Controllers.AuthController.Register (RecipeAPI) in 115.7439ms
+2025-06-26 18:33:08.768 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.AuthController.Register (RecipeAPI)'
+2025-06-26 18:33:08.768 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Auth/register - 200 null application/json; charset=utf-8 127.3222ms
+2025-06-26 18:33:44.401 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Auth/register - application/json 114
+2025-06-26 18:33:44.419 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.AuthController.Register (RecipeAPI)'
+2025-06-26 18:33:44.423 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[RecipeAPI.Models.DTOs.LoginResponseDto]] Register(RecipeAPI.Models.DTOs.RegisterDto) on controller RecipeAPI.Controllers.AuthController (RecipeAPI).
+2025-06-26 18:33:44.487 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__registerDto_KullaniciAdi_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Kullanicilar] AS [k]
+        WHERE [k].[KullaniciAdi] = @__registerDto_KullaniciAdi_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-26 18:33:44.501 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[@__registerDto_Email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Kullanicilar] AS [k]
+        WHERE [k].[Email] = @__registerDto_Email_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-26 18:33:44.564 +03:00 [INF] Executed DbCommand (47ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Kullanicilar] ([AdSoyad], [AktifMi], [Email], [KayitTarihi], [KullaniciAdi], [Sifre])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2025-06-26 18:33:44.567 +03:00 [INF] Yeni kullanıcı kaydı oluşturuldu: helin
+2025-06-26 18:33:44.595 +03:00 [INF] Executing OkObjectResult, writing value of type 'RecipeAPI.Models.DTOs.LoginResponseDto'.
+2025-06-26 18:33:44.600 +03:00 [INF] Executed action RecipeAPI.Controllers.AuthController.Register (RecipeAPI) in 176.6656ms
+2025-06-26 18:33:44.624 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.AuthController.Register (RecipeAPI)'
+2025-06-26 18:33:44.637 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Auth/register - 200 null application/json; charset=utf-8 237.1248ms
+2025-06-26 18:34:06.063 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Auth/login - application/json 61
+2025-06-26 18:34:06.064 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.AuthController.Login (RecipeAPI)'
+2025-06-26 18:34:06.065 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[RecipeAPI.Models.DTOs.LoginResponseDto]] Login(RecipeAPI.Models.DTOs.LoginDto) on controller RecipeAPI.Controllers.AuthController (RecipeAPI).
+2025-06-26 18:34:06.097 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__loginDto_KullaniciAdiVeyaEmail_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [k].[Id], [k].[AdSoyad], [k].[AktifMi], [k].[Email], [k].[KayitTarihi], [k].[KullaniciAdi], [k].[Sifre]
+FROM [Kullanicilar] AS [k]
+WHERE [k].[KullaniciAdi] = @__loginDto_KullaniciAdiVeyaEmail_0 OR [k].[Email] = @__loginDto_KullaniciAdiVeyaEmail_0
+2025-06-26 18:34:06.098 +03:00 [INF] Kullanıcı giriş yaptı: elif
+2025-06-26 18:34:06.116 +03:00 [INF] Executed DbCommand (16ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tarifler] AS [t]
+WHERE [t].[KullaniciId] = @__user_Id_0
+2025-06-26 18:34:06.117 +03:00 [INF] Executing OkObjectResult, writing value of type 'RecipeAPI.Models.DTOs.LoginResponseDto'.
+2025-06-26 18:34:06.117 +03:00 [INF] Executed action RecipeAPI.Controllers.AuthController.Login (RecipeAPI) in 51.756ms
+2025-06-26 18:34:06.117 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.AuthController.Login (RecipeAPI)'
+2025-06-26 18:34:06.123 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Auth/login - 200 null application/json; charset=utf-8 59.7064ms
+2025-06-26 18:39:07.362 +03:00 [INF] Application is shutting down...
