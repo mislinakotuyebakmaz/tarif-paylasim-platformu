@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace RecipeAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class BaslangicMigration : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -17,8 +17,8 @@ namespace RecipeAPI.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Ad = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Aciklama = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Ad = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Aciklama = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -31,10 +31,10 @@ namespace RecipeAPI.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    KullaniciAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    KullaniciAdi = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Sifre = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    AdSoyad = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AdSoyad = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     KayitTarihi = table.Column<DateTime>(type: "datetime2", nullable: false),
                     AktifMi = table.Column<bool>(type: "bit", nullable: false)
                 },
@@ -49,17 +49,20 @@ namespace RecipeAPI.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Baslik = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Aciklama = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Talimatlar = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    HazirlamaSuresi = table.Column<int>(type: "int", nullable: false),
-                    PisirmeSuresi = table.Column<int>(type: "int", nullable: false),
-                    KacKisilik = table.Column<int>(type: "int", nullable: false),
-                    ZorlukSeviyesi = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EklenmeTarihi = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    GuncellenmeTarihi = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    KullaniciId = table.Column<int>(type: "int", nullable: false),
-                    KategoriId = table.Column<int>(type: "int", nullable: false)
+                    Baslik = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    Aciklama = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
+                    Hazirlanis = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Malzemeler = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    HazirlikSuresi = table.Column<int>(type: "int", nullable: true),
+                    PisirmeSuresi = table.Column<int>(type: "int", nullable: true),
+                    Porsiyon = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ZorlukDerecesi = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ResimUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AktifMi = table.Column<bool>(type: "bit", nullable: false),
+                    OlusturmaTarihi = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    GuncellemeTarihi = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    KategoriId = table.Column<int>(type: "int", nullable: false),
+                    KullaniciId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -69,36 +72,60 @@ namespace RecipeAPI.Migrations
                         column: x => x.KategoriId,
                         principalTable: "Kategoriler",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Tarifler_Kullanicilar_KullaniciId",
                         column: x => x.KullaniciId,
                         principalTable: "Kullanicilar",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Degerlendirmeler",
+                name: "Favoriler",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Puan = table.Column<int>(type: "int", nullable: false),
-                    DegerlendirmeTarihi = table.Column<DateTime>(type: "datetime2", nullable: false),
                     KullaniciId = table.Column<int>(type: "int", nullable: false),
                     TarifId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Degerlendirmeler", x => x.Id);
+                    table.PrimaryKey("PK_Favoriler", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Degerlendirmeler_Kullanicilar_KullaniciId",
+                        name: "FK_Favoriler_Kullanicilar_KullaniciId",
                         column: x => x.KullaniciId,
                         principalTable: "Kullanicilar",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Degerlendirmeler_Tarifler_TarifId",
+                        name: "FK_Favoriler_Tarifler_TarifId",
+                        column: x => x.TarifId,
+                        principalTable: "Tarifler",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Puanlamalar",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Puan = table.Column<int>(type: "int", nullable: false),
+                    KullaniciId = table.Column<int>(type: "int", nullable: false),
+                    TarifId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Puanlamalar", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Puanlamalar_Kullanicilar_KullaniciId",
+                        column: x => x.KullaniciId,
+                        principalTable: "Kullanicilar",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Puanlamalar_Tarifler_TarifId",
                         column: x => x.TarifId,
                         principalTable: "Tarifler",
                         principalColumn: "Id",
@@ -111,9 +138,9 @@ namespace RecipeAPI.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    MalzemeAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MalzemeAdi = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Miktar = table.Column<decimal>(type: "decimal(10,2)", precision: 10, scale: 2, nullable: false),
-                    Birim = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Birim = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     TarifId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -133,9 +160,8 @@ namespace RecipeAPI.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    DosyaAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DosyaYolu = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    AnaResimMi = table.Column<bool>(type: "bit", nullable: false),
+                    ResimUrl = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    Aciklama = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     TarifId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -155,8 +181,8 @@ namespace RecipeAPI.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Yorum = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    YorumTarihi = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Yorum = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
+                    OlusturmaTarihi = table.Column<DateTime>(type: "datetime2", nullable: false),
                     KullaniciId = table.Column<int>(type: "int", nullable: false),
                     TarifId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -177,15 +203,38 @@ namespace RecipeAPI.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Degerlendirmeler_KullaniciId_TarifId",
-                table: "Degerlendirmeler",
-                columns: new[] { "KullaniciId", "TarifId" },
+                name: "IX_Favoriler_KullaniciId",
+                table: "Favoriler",
+                column: "KullaniciId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Favoriler_TarifId_KullaniciId",
+                table: "Favoriler",
+                columns: new[] { "TarifId", "KullaniciId" },
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Degerlendirmeler_TarifId",
-                table: "Degerlendirmeler",
-                column: "TarifId");
+                name: "IX_Kullanicilar_Email",
+                table: "Kullanicilar",
+                column: "Email",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Kullanicilar_KullaniciAdi",
+                table: "Kullanicilar",
+                column: "KullaniciAdi",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Puanlamalar_KullaniciId",
+                table: "Puanlamalar",
+                column: "KullaniciId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Puanlamalar_TarifId_KullaniciId",
+                table: "Puanlamalar",
+                columns: new[] { "TarifId", "KullaniciId" },
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Tarifler_KategoriId",
@@ -222,7 +271,10 @@ namespace RecipeAPI.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Degerlendirmeler");
+                name: "Favoriler");
+
+            migrationBuilder.DropTable(
+                name: "Puanlamalar");
 
             migrationBuilder.DropTable(
                 name: "TarifMalzemeler");

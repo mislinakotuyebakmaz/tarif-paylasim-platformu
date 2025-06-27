@@ -186,3 +186,4 @@
 /Users/mislinakotuyebakmaz/tarif-paylasim-platformu/backend/RecipeAPI/obj/Debug/net8.0/RecipeAPI.genruntimeconfig.cache
 /Users/mislinakotuyebakmaz/tarif-paylasim-platformu/backend/RecipeAPI/obj/Debug/net8.0/ref/RecipeAPI.dll
 /Users/mislinakotuyebakmaz/tarif-paylasim-platformu/backend/RecipeAPI/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/mislinakotuyebakmaz/tarif-paylasim-platformu/backend/RecipeAPI/obj/Debug/net8.0/RecipeAPI.sourcelink.json

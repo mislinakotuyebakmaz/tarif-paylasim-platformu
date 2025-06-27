@@ -1,0 +1,1068 @@
+2025-06-27 02:01:28.042 +03:00 [INF] Executed DbCommand (69ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-27 02:01:28.345 +03:00 [INF] Executed DbCommand (63ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-27 02:01:28.348 +03:00 [INF] Veritabanı kontrol edildi.
+2025-06-27 02:01:28.412 +03:00 [INF] User profile is available. Using '/Users/mislinakotuyebakmaz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-27 02:01:28.550 +03:00 [INF] Now listening on: http://localhost:5300
+2025-06-27 02:01:28.556 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-27 02:01:28.558 +03:00 [INF] Hosting environment: Development
+2025-06-27 02:01:28.558 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/tarif-paylasim-platformu/backend/RecipeAPI
+2025-06-27 02:01:36.797 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/ - null null
+2025-06-27 02:01:37.001 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-27 02:01:37.161 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/ - 404 0 null 379.3718ms
+2025-06-27 02:01:37.170 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5300/, Response status code: 404
+2025-06-27 02:01:40.980 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - null null
+2025-06-27 02:01:41.218 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 237.9577ms
+2025-06-27 02:03:55.986 +03:00 [INF] Application is shutting down...
+2025-06-27 02:06:53.891 +03:00 [INF] Executed DbCommand (47ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-27 02:06:54.146 +03:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-27 02:06:54.150 +03:00 [INF] Veritabanı başarıyla kontrol edildi/oluşturuldu.
+2025-06-27 02:06:54.233 +03:00 [INF] User profile is available. Using '/Users/mislinakotuyebakmaz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-27 02:06:54.400 +03:00 [INF] Now listening on: http://localhost:5300
+2025-06-27 02:06:54.419 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-27 02:06:54.426 +03:00 [INF] Hosting environment: Development
+2025-06-27 02:06:54.427 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/tarif-paylasim-platformu/backend/RecipeAPI
+2025-06-27 02:07:04.132 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/ - null null
+2025-06-27 02:07:04.280 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/ - 301 0 null 150.1745ms
+2025-06-27 02:07:04.311 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/index.html - null null
+2025-06-27 02:07:04.646 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/index.html - 200 null text/html;charset=utf-8 329.5994ms
+2025-06-27 02:07:04.693 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger-ui-bundle.js - null null
+2025-06-27 02:07:04.694 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger-ui-standalone-preset.js - null null
+2025-06-27 02:07:04.703 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/index.js - null null
+2025-06-27 02:07:04.747 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/index.css - null null
+2025-06-27 02:07:04.782 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/index.js - 200 null application/javascript;charset=utf-8 78.682ms
+2025-06-27 02:07:04.820 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger-ui.css - null null
+2025-06-27 02:07:04.847 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-06-27 02:07:04.978 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-06-27 02:07:04.932 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-06-27 02:07:04.996 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/index.css - 200 202 text/css 241.6415ms
+2025-06-27 02:07:05.019 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger-ui-bundle.js - 200 1485241 text/javascript 326.4605ms
+2025-06-27 02:07:05.020 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger-ui-standalone-preset.js - 200 229223 text/javascript 325.3372ms
+2025-06-27 02:07:05.029 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-06-27 02:07:05.030 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger-ui.css - 200 154949 text/css 270.1929ms
+2025-06-27 02:07:05.697 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - null null
+2025-06-27 02:07:05.819 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/favicon-32x32.png - null null
+2025-06-27 02:07:05.820 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-06-27 02:07:05.820 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/favicon-32x32.png - 200 628 image/png 1.1646ms
+2025-06-27 02:07:06.180 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 482.8631ms
+2025-06-27 02:08:34.828 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Auth/login - application/json 60
+2025-06-27 02:08:34.853 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-27 02:08:34.941 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.AuthController.Login (RecipeAPI)'
+2025-06-27 02:08:35.106 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[RecipeAPI.Models.DTOs.LoginResponseDto]] Login(RecipeAPI.Models.DTOs.LoginDto) on controller RecipeAPI.Controllers.AuthController (RecipeAPI).
+2025-06-27 02:08:36.534 +03:00 [INF] Executed DbCommand (459ms) [Parameters=[@__loginDto_KullaniciAdiVeyaEmail_0='?' (Size = 50), @__loginDto_KullaniciAdiVeyaEmail_0_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [k].[Id], [k].[AdSoyad], [k].[AktifMi], [k].[Email], [k].[KayitTarihi], [k].[KullaniciAdi], [k].[Sifre]
+FROM [Kullanicilar] AS [k]
+WHERE [k].[KullaniciAdi] = @__loginDto_KullaniciAdiVeyaEmail_0 OR [k].[Email] = @__loginDto_KullaniciAdiVeyaEmail_0_1
+2025-06-27 02:08:36.672 +03:00 [INF] Kullanıcı giriş yaptı: elif
+2025-06-27 02:08:36.803 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tarifler] AS [t]
+WHERE [t].[KullaniciId] = @__user_Id_0
+2025-06-27 02:08:36.818 +03:00 [INF] Executing OkObjectResult, writing value of type 'RecipeAPI.Models.DTOs.LoginResponseDto'.
+2025-06-27 02:08:36.866 +03:00 [INF] Executed action RecipeAPI.Controllers.AuthController.Login (RecipeAPI) in 1749.2443ms
+2025-06-27 02:08:36.867 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.AuthController.Login (RecipeAPI)'
+2025-06-27 02:08:36.873 +03:00 [INF] HTTP POST /api/Auth/login responded 200 in 2033.9437 ms
+2025-06-27 02:08:36.913 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Auth/login - 200 null application/json; charset=utf-8 2084.1487ms
+2025-06-27 02:10:16.778 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Auth/register - application/json 107
+2025-06-27 02:10:16.804 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.AuthController.Register (RecipeAPI)'
+2025-06-27 02:10:16.835 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[RecipeAPI.Models.DTOs.LoginResponseDto]] Register(RecipeAPI.Models.DTOs.RegisterDto) on controller RecipeAPI.Controllers.AuthController (RecipeAPI).
+2025-06-27 02:10:17.155 +03:00 [INF] Executed DbCommand (121ms) [Parameters=[@__registerDto_KullaniciAdi_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Kullanicilar] AS [k]
+        WHERE [k].[KullaniciAdi] = @__registerDto_KullaniciAdi_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-27 02:10:17.184 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[@__registerDto_Email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Kullanicilar] AS [k]
+        WHERE [k].[Email] = @__registerDto_Email_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-27 02:10:17.780 +03:00 [INF] Executed DbCommand (130ms) [Parameters=[@p0='?' (Size = 100), @p1='?' (DbType = Boolean), @p2='?' (Size = 100), @p3='?' (DbType = DateTime2), @p4='?' (Size = 50), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Kullanicilar] ([AdSoyad], [AktifMi], [Email], [KayitTarihi], [KullaniciAdi], [Sifre])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2025-06-27 02:10:17.898 +03:00 [INF] Yeni kullanıcı kaydı oluşturuldu: can
+2025-06-27 02:10:17.900 +03:00 [INF] Executing OkObjectResult, writing value of type 'RecipeAPI.Models.DTOs.LoginResponseDto'.
+2025-06-27 02:10:17.903 +03:00 [INF] Executed action RecipeAPI.Controllers.AuthController.Register (RecipeAPI) in 1067.2418ms
+2025-06-27 02:10:17.904 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.AuthController.Register (RecipeAPI)'
+2025-06-27 02:10:17.906 +03:00 [INF] HTTP POST /api/Auth/register responded 200 in 1121.0381 ms
+2025-06-27 02:10:17.916 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Auth/register - 200 null application/json; charset=utf-8 1140.7527ms
+2025-06-27 02:11:02.662 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Auth/login - application/json 58
+2025-06-27 02:11:02.668 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.AuthController.Login (RecipeAPI)'
+2025-06-27 02:11:02.671 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[RecipeAPI.Models.DTOs.LoginResponseDto]] Login(RecipeAPI.Models.DTOs.LoginDto) on controller RecipeAPI.Controllers.AuthController (RecipeAPI).
+2025-06-27 02:11:02.730 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__loginDto_KullaniciAdiVeyaEmail_0='?' (Size = 50), @__loginDto_KullaniciAdiVeyaEmail_0_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [k].[Id], [k].[AdSoyad], [k].[AktifMi], [k].[Email], [k].[KayitTarihi], [k].[KullaniciAdi], [k].[Sifre]
+FROM [Kullanicilar] AS [k]
+WHERE [k].[KullaniciAdi] = @__loginDto_KullaniciAdiVeyaEmail_0 OR [k].[Email] = @__loginDto_KullaniciAdiVeyaEmail_0_1
+2025-06-27 02:11:02.731 +03:00 [INF] Kullanıcı giriş yaptı: can
+2025-06-27 02:11:02.740 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tarifler] AS [t]
+WHERE [t].[KullaniciId] = @__user_Id_0
+2025-06-27 02:11:02.742 +03:00 [INF] Executing OkObjectResult, writing value of type 'RecipeAPI.Models.DTOs.LoginResponseDto'.
+2025-06-27 02:11:02.745 +03:00 [INF] Executed action RecipeAPI.Controllers.AuthController.Login (RecipeAPI) in 73.1322ms
+2025-06-27 02:11:02.747 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.AuthController.Login (RecipeAPI)'
+2025-06-27 02:11:02.747 +03:00 [INF] HTTP POST /api/Auth/login responded 200 in 83.0941 ms
+2025-06-27 02:11:02.748 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Auth/login - 200 null application/json; charset=utf-8 85.3919ms
+2025-06-27 02:13:15.493 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Recipes - application/json 292
+2025-06-27 02:13:15.520 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-06-27 02:13:15.545 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-27 02:13:15.545 +03:00 [INF] HTTP POST /api/Recipes responded 401 in 38.8862 ms
+2025-06-27 02:13:15.548 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Recipes - 401 0 null 55.5632ms
+2025-06-27 02:14:02.095 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Auth/login - application/json 58
+2025-06-27 02:14:02.098 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.AuthController.Login (RecipeAPI)'
+2025-06-27 02:14:02.112 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[RecipeAPI.Models.DTOs.LoginResponseDto]] Login(RecipeAPI.Models.DTOs.LoginDto) on controller RecipeAPI.Controllers.AuthController (RecipeAPI).
+2025-06-27 02:14:02.147 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[@__loginDto_KullaniciAdiVeyaEmail_0='?' (Size = 50), @__loginDto_KullaniciAdiVeyaEmail_0_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [k].[Id], [k].[AdSoyad], [k].[AktifMi], [k].[Email], [k].[KayitTarihi], [k].[KullaniciAdi], [k].[Sifre]
+FROM [Kullanicilar] AS [k]
+WHERE [k].[KullaniciAdi] = @__loginDto_KullaniciAdiVeyaEmail_0 OR [k].[Email] = @__loginDto_KullaniciAdiVeyaEmail_0_1
+2025-06-27 02:14:02.149 +03:00 [INF] Kullanıcı giriş yaptı: can
+2025-06-27 02:14:02.163 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tarifler] AS [t]
+WHERE [t].[KullaniciId] = @__user_Id_0
+2025-06-27 02:14:02.164 +03:00 [INF] Executing OkObjectResult, writing value of type 'RecipeAPI.Models.DTOs.LoginResponseDto'.
+2025-06-27 02:14:02.165 +03:00 [INF] Executed action RecipeAPI.Controllers.AuthController.Login (RecipeAPI) in 51.8634ms
+2025-06-27 02:14:02.165 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.AuthController.Login (RecipeAPI)'
+2025-06-27 02:14:02.166 +03:00 [INF] HTTP POST /api/Auth/login responded 200 in 68.1497 ms
+2025-06-27 02:14:02.169 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Auth/login - 200 null application/json; charset=utf-8 73.6356ms
+2025-06-27 02:14:13.257 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Recipes - application/json 292
+2025-06-27 02:14:13.261 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-06-27 02:14:13.262 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-27 02:14:13.262 +03:00 [INF] HTTP POST /api/Recipes responded 401 in 5.2901 ms
+2025-06-27 02:14:13.263 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Recipes - 401 0 null 6.0776ms
+2025-06-27 02:16:37.069 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Auth/login - application/json 62
+2025-06-27 02:16:37.071 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.AuthController.Login (RecipeAPI)'
+2025-06-27 02:16:37.073 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[RecipeAPI.Models.DTOs.LoginResponseDto]] Login(RecipeAPI.Models.DTOs.LoginDto) on controller RecipeAPI.Controllers.AuthController (RecipeAPI).
+2025-06-27 02:16:37.114 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__loginDto_KullaniciAdiVeyaEmail_0='?' (Size = 50), @__loginDto_KullaniciAdiVeyaEmail_0_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [k].[Id], [k].[AdSoyad], [k].[AktifMi], [k].[Email], [k].[KayitTarihi], [k].[KullaniciAdi], [k].[Sifre]
+FROM [Kullanicilar] AS [k]
+WHERE [k].[KullaniciAdi] = @__loginDto_KullaniciAdiVeyaEmail_0 OR [k].[Email] = @__loginDto_KullaniciAdiVeyaEmail_0_1
+2025-06-27 02:16:37.115 +03:00 [INF] Kullanıcı giriş yaptı: helin
+2025-06-27 02:16:37.134 +03:00 [INF] Executed DbCommand (16ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tarifler] AS [t]
+WHERE [t].[KullaniciId] = @__user_Id_0
+2025-06-27 02:16:37.138 +03:00 [INF] Executing OkObjectResult, writing value of type 'RecipeAPI.Models.DTOs.LoginResponseDto'.
+2025-06-27 02:16:37.152 +03:00 [INF] Executed action RecipeAPI.Controllers.AuthController.Login (RecipeAPI) in 77.1847ms
+2025-06-27 02:16:37.153 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.AuthController.Login (RecipeAPI)'
+2025-06-27 02:16:37.153 +03:00 [INF] HTTP POST /api/Auth/login responded 200 in 81.8156 ms
+2025-06-27 02:16:37.153 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Auth/login - 200 null application/json; charset=utf-8 84.8797ms
+2025-06-27 02:17:07.538 +03:00 [INF] Application is shutting down...
+2025-06-27 02:17:47.539 +03:00 [INF] Executed DbCommand (157ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-27 02:17:48.162 +03:00 [INF] Executed DbCommand (73ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-27 02:17:48.237 +03:00 [INF] Veritabanı başarıyla kontrol edildi/oluşturuldu.
+2025-06-27 02:17:48.387 +03:00 [INF] User profile is available. Using '/Users/mislinakotuyebakmaz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-27 02:17:48.861 +03:00 [INF] Now listening on: http://localhost:5300
+2025-06-27 02:17:48.909 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-27 02:17:48.913 +03:00 [INF] Hosting environment: Development
+2025-06-27 02:17:48.914 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/tarif-paylasim-platformu/backend/RecipeAPI
+2025-06-27 02:17:56.540 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - null null
+2025-06-27 02:17:57.381 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 865.0711ms
+2025-06-27 02:18:16.586 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Auth/login - application/json 60
+2025-06-27 02:18:16.958 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-27 02:18:17.462 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.AuthController.Login (RecipeAPI)'
+2025-06-27 02:18:17.681 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[RecipeAPI.Models.DTOs.LoginResponseDto]] Login(RecipeAPI.Models.DTOs.LoginDto) on controller RecipeAPI.Controllers.AuthController (RecipeAPI).
+2025-06-27 02:18:20.052 +03:00 [INF] Executed DbCommand (175ms) [Parameters=[@__loginDto_KullaniciAdiVeyaEmail_0='?' (Size = 50), @__loginDto_KullaniciAdiVeyaEmail_0_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [k].[Id], [k].[AdSoyad], [k].[AktifMi], [k].[Email], [k].[KayitTarihi], [k].[KullaniciAdi], [k].[Sifre]
+FROM [Kullanicilar] AS [k]
+WHERE [k].[KullaniciAdi] = @__loginDto_KullaniciAdiVeyaEmail_0 OR [k].[Email] = @__loginDto_KullaniciAdiVeyaEmail_0_1
+2025-06-27 02:18:20.404 +03:00 [INF] Kullanıcı giriş yaptı: elif
+2025-06-27 02:18:20.774 +03:00 [INF] Executed DbCommand (22ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tarifler] AS [t]
+WHERE [t].[KullaniciId] = @__user_Id_0
+2025-06-27 02:18:20.889 +03:00 [INF] Executing OkObjectResult, writing value of type 'RecipeAPI.Models.DTOs.LoginResponseDto'.
+2025-06-27 02:18:21.007 +03:00 [INF] Executed action RecipeAPI.Controllers.AuthController.Login (RecipeAPI) in 3294.1246ms
+2025-06-27 02:18:21.009 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.AuthController.Login (RecipeAPI)'
+2025-06-27 02:18:21.031 +03:00 [INF] HTTP POST /api/Auth/login responded 200 in 4085.5610 ms
+2025-06-27 02:18:21.116 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Auth/login - 200 null application/json; charset=utf-8 4528.3941ms
+2025-06-27 02:20:12.150 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Recipes - application/json 300
+2025-06-27 02:20:12.207 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-06-27 02:20:12.243 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-27 02:20:12.245 +03:00 [INF] HTTP POST /api/Recipes responded 401 in 89.4213 ms
+2025-06-27 02:20:12.248 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Recipes - 401 0 null 98.3449ms
+2025-06-27 02:21:02.264 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/.well-known/appspecific/com.chrome.devtools.json - null null
+2025-06-27 02:21:02.305 +03:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 11.7767 ms
+2025-06-27 02:21:02.307 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 42.4023ms
+2025-06-27 02:21:02.313 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5300/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2025-06-27 02:23:45.261 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/index.html - null null
+2025-06-27 02:23:45.646 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/index.html - 200 null text/html;charset=utf-8 385.2657ms
+2025-06-27 02:23:47.496 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - null null
+2025-06-27 02:23:47.542 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 45.8943ms
+2025-06-27 02:24:23.102 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Auth/login - application/json 62
+2025-06-27 02:24:23.105 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.AuthController.Login (RecipeAPI)'
+2025-06-27 02:24:23.107 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[RecipeAPI.Models.DTOs.LoginResponseDto]] Login(RecipeAPI.Models.DTOs.LoginDto) on controller RecipeAPI.Controllers.AuthController (RecipeAPI).
+2025-06-27 02:24:23.624 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[@__loginDto_KullaniciAdiVeyaEmail_0='?' (Size = 50), @__loginDto_KullaniciAdiVeyaEmail_0_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [k].[Id], [k].[AdSoyad], [k].[AktifMi], [k].[Email], [k].[KayitTarihi], [k].[KullaniciAdi], [k].[Sifre]
+FROM [Kullanicilar] AS [k]
+WHERE [k].[KullaniciAdi] = @__loginDto_KullaniciAdiVeyaEmail_0 OR [k].[Email] = @__loginDto_KullaniciAdiVeyaEmail_0_1
+2025-06-27 02:24:23.632 +03:00 [INF] Kullanıcı giriş yaptı: helin
+2025-06-27 02:24:23.694 +03:00 [INF] Executed DbCommand (51ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tarifler] AS [t]
+WHERE [t].[KullaniciId] = @__user_Id_0
+2025-06-27 02:24:23.697 +03:00 [INF] Executing OkObjectResult, writing value of type 'RecipeAPI.Models.DTOs.LoginResponseDto'.
+2025-06-27 02:24:23.698 +03:00 [INF] Executed action RecipeAPI.Controllers.AuthController.Login (RecipeAPI) in 588.6322ms
+2025-06-27 02:24:23.700 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.AuthController.Login (RecipeAPI)'
+2025-06-27 02:24:23.701 +03:00 [INF] HTTP POST /api/Auth/login responded 200 in 596.0146 ms
+2025-06-27 02:24:23.702 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Auth/login - 200 null application/json; charset=utf-8 600.0903ms
+2025-06-27 02:27:11.603 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Recipes - application/json 304
+2025-06-27 02:27:11.815 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.RecipesController.CreateRecipe (RecipeAPI)'
+2025-06-27 02:27:11.880 +03:00 [INF] Route matched with {action = "CreateRecipe", controller = "Recipes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateRecipe(RecipeAPI.Controllers.RecipeCreateDto) on controller RecipeAPI.Controllers.RecipesController (RecipeAPI).
+2025-06-27 02:27:13.169 +03:00 [ERR] Failed executing DbCommand (121ms) [Parameters=[@p0='?' (Size = 1000), @p1='?' (DbType = Boolean), @p2='?' (Size = 200), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2), @p10='?' (DbType = Int32), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Tarifler] ([Aciklama], [AktifMi], [Baslik], [GuncellemeTarihi], [Hazirlanis], [HazirlikSuresi], [KategoriId], [KullaniciId], [Malzemeler], [OlusturmaTarihi], [PisirmeSuresi], [Porsiyon], [ResimUrl], [ZorlukDerecesi])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13);
+2025-06-27 02:27:13.448 +03:00 [ERR] An exception occurred in the database while saving changes for context type 'RecipeAPI.Data.RecipeDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'AktifMi'.
+Invalid column name 'GuncellemeTarihi'.
+Invalid column name 'Hazirlanis'.
+Invalid column name 'HazirlikSuresi'.
+Invalid column name 'Malzemeler'.
+Invalid column name 'OlusturmaTarihi'.
+Invalid column name 'Porsiyon'.
+Invalid column name 'ResimUrl'.
+Invalid column name 'ZorlukDerecesi'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:5163ea2d-86bf-4f22-a532-0f85520b7f8a
+Error Number:207,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'AktifMi'.
+Invalid column name 'GuncellemeTarihi'.
+Invalid column name 'Hazirlanis'.
+Invalid column name 'HazirlikSuresi'.
+Invalid column name 'Malzemeler'.
+Invalid column name 'OlusturmaTarihi'.
+Invalid column name 'Porsiyon'.
+Invalid column name 'ResimUrl'.
+Invalid column name 'ZorlukDerecesi'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:5163ea2d-86bf-4f22-a532-0f85520b7f8a
+Error Number:207,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-06-27 02:27:13.552 +03:00 [INF] Executed action RecipeAPI.Controllers.RecipesController.CreateRecipe (RecipeAPI) in 1670.2808ms
+2025-06-27 02:27:13.556 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.RecipesController.CreateRecipe (RecipeAPI)'
+2025-06-27 02:27:13.563 +03:00 [ERR] HTTP POST /api/Recipes responded 500 in 1957.8710 ms
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'AktifMi'.
+Invalid column name 'GuncellemeTarihi'.
+Invalid column name 'Hazirlanis'.
+Invalid column name 'HazirlikSuresi'.
+Invalid column name 'Malzemeler'.
+Invalid column name 'OlusturmaTarihi'.
+Invalid column name 'Porsiyon'.
+Invalid column name 'ResimUrl'.
+Invalid column name 'ZorlukDerecesi'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:5163ea2d-86bf-4f22-a532-0f85520b7f8a
+Error Number:207,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at RecipeAPI.Controllers.RecipesController.CreateRecipe(RecipeCreateDto recipeDto) in /Users/mislinakotuyebakmaz/tarif-paylasim-platformu/backend/RecipeAPI/Controllers/RecipesController.cs:line 77
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-06-27 02:27:13.649 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'AktifMi'.
+Invalid column name 'GuncellemeTarihi'.
+Invalid column name 'Hazirlanis'.
+Invalid column name 'HazirlikSuresi'.
+Invalid column name 'Malzemeler'.
+Invalid column name 'OlusturmaTarihi'.
+Invalid column name 'Porsiyon'.
+Invalid column name 'ResimUrl'.
+Invalid column name 'ZorlukDerecesi'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:5163ea2d-86bf-4f22-a532-0f85520b7f8a
+Error Number:207,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at RecipeAPI.Controllers.RecipesController.CreateRecipe(RecipeCreateDto recipeDto) in /Users/mislinakotuyebakmaz/tarif-paylasim-platformu/backend/RecipeAPI/Controllers/RecipesController.cs:line 77
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-27 02:27:13.697 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Recipes - 500 null text/plain; charset=utf-8 2093.7868ms
+2025-06-27 02:31:19.100 +03:00 [INF] Application is shutting down...
+2025-06-27 02:32:22.396 +03:00 [INF] Executed DbCommand (68ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-27 02:32:23.299 +03:00 [INF] Executed DbCommand (550ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [RecipeDB] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+END;
+2025-06-27 02:32:26.350 +03:00 [INF] Executed DbCommand (3,049ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+DROP DATABASE [RecipeDB];
+2025-06-27 02:33:20.121 +03:00 [INF] Executed DbCommand (2,542ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [RecipeDB];
+2025-06-27 02:33:20.882 +03:00 [INF] Executed DbCommand (589ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [RecipeDB] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2025-06-27 02:33:21.342 +03:00 [INF] Executed DbCommand (52ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-27 02:33:21.357 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-06-27 02:33:21.791 +03:00 [INF] Executed DbCommand (412ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-06-27 02:33:22.107 +03:00 [INF] Executed DbCommand (52ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-06-27 02:33:22.165 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-27 02:33:22.174 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-06-27 02:33:22.213 +03:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-06-27 02:33:22.255 +03:00 [INF] Applying migration '20250626233247_InitialCreate'.
+2025-06-27 02:33:22.448 +03:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Kategoriler] (
+    [Id] int NOT NULL IDENTITY,
+    [Ad] nvarchar(100) NOT NULL,
+    [Aciklama] nvarchar(500) NOT NULL,
+    CONSTRAINT [PK_Kategoriler] PRIMARY KEY ([Id])
+);
+2025-06-27 02:33:22.472 +03:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Kullanicilar] (
+    [Id] int NOT NULL IDENTITY,
+    [KullaniciAdi] nvarchar(50) NOT NULL,
+    [Email] nvarchar(100) NOT NULL,
+    [Sifre] nvarchar(max) NOT NULL,
+    [AdSoyad] nvarchar(100) NOT NULL,
+    [KayitTarihi] datetime2 NOT NULL,
+    [AktifMi] bit NOT NULL,
+    CONSTRAINT [PK_Kullanicilar] PRIMARY KEY ([Id])
+);
+2025-06-27 02:33:22.516 +03:00 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Tarifler] (
+    [Id] int NOT NULL IDENTITY,
+    [Baslik] nvarchar(200) NOT NULL,
+    [Aciklama] nvarchar(1000) NOT NULL,
+    [Hazirlanis] nvarchar(max) NOT NULL,
+    [Malzemeler] nvarchar(max) NOT NULL,
+    [HazirlikSuresi] int NULL,
+    [PisirmeSuresi] int NULL,
+    [Porsiyon] nvarchar(max) NOT NULL,
+    [ZorlukDerecesi] nvarchar(max) NOT NULL,
+    [ResimUrl] nvarchar(max) NOT NULL,
+    [AktifMi] bit NOT NULL,
+    [OlusturmaTarihi] datetime2 NOT NULL,
+    [GuncellemeTarihi] datetime2 NULL,
+    [KategoriId] int NOT NULL,
+    [KullaniciId] int NOT NULL,
+    CONSTRAINT [PK_Tarifler] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Tarifler_Kategoriler_KategoriId] FOREIGN KEY ([KategoriId]) REFERENCES [Kategoriler] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_Tarifler_Kullanicilar_KullaniciId] FOREIGN KEY ([KullaniciId]) REFERENCES [Kullanicilar] ([Id]) ON DELETE NO ACTION
+);
+2025-06-27 02:33:22.530 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Favoriler] (
+    [Id] int NOT NULL IDENTITY,
+    [KullaniciId] int NOT NULL,
+    [TarifId] int NOT NULL,
+    CONSTRAINT [PK_Favoriler] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Favoriler_Kullanicilar_KullaniciId] FOREIGN KEY ([KullaniciId]) REFERENCES [Kullanicilar] ([Id]),
+    CONSTRAINT [FK_Favoriler_Tarifler_TarifId] FOREIGN KEY ([TarifId]) REFERENCES [Tarifler] ([Id]) ON DELETE CASCADE
+);
+2025-06-27 02:33:22.566 +03:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Puanlamalar] (
+    [Id] int NOT NULL IDENTITY,
+    [Puan] int NOT NULL,
+    [KullaniciId] int NOT NULL,
+    [TarifId] int NOT NULL,
+    CONSTRAINT [PK_Puanlamalar] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Puanlamalar_Kullanicilar_KullaniciId] FOREIGN KEY ([KullaniciId]) REFERENCES [Kullanicilar] ([Id]),
+    CONSTRAINT [FK_Puanlamalar_Tarifler_TarifId] FOREIGN KEY ([TarifId]) REFERENCES [Tarifler] ([Id]) ON DELETE CASCADE
+);
+2025-06-27 02:33:22.586 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [TarifMalzemeler] (
+    [Id] int NOT NULL IDENTITY,
+    [MalzemeAdi] nvarchar(100) NOT NULL,
+    [Miktar] decimal(10,2) NOT NULL,
+    [Birim] nvarchar(20) NOT NULL,
+    [TarifId] int NOT NULL,
+    CONSTRAINT [PK_TarifMalzemeler] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_TarifMalzemeler_Tarifler_TarifId] FOREIGN KEY ([TarifId]) REFERENCES [Tarifler] ([Id]) ON DELETE CASCADE
+);
+2025-06-27 02:33:22.631 +03:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [TarifResimleri] (
+    [Id] int NOT NULL IDENTITY,
+    [ResimUrl] nvarchar(500) NOT NULL,
+    [Aciklama] nvarchar(200) NOT NULL,
+    [TarifId] int NOT NULL,
+    CONSTRAINT [PK_TarifResimleri] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_TarifResimleri_Tarifler_TarifId] FOREIGN KEY ([TarifId]) REFERENCES [Tarifler] ([Id]) ON DELETE CASCADE
+);
+2025-06-27 02:33:22.667 +03:00 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Yorumlar] (
+    [Id] int NOT NULL IDENTITY,
+    [Yorum] nvarchar(1000) NOT NULL,
+    [OlusturmaTarihi] datetime2 NOT NULL,
+    [KullaniciId] int NOT NULL,
+    [TarifId] int NOT NULL,
+    CONSTRAINT [PK_Yorumlar] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Yorumlar_Kullanicilar_KullaniciId] FOREIGN KEY ([KullaniciId]) REFERENCES [Kullanicilar] ([Id]),
+    CONSTRAINT [FK_Yorumlar_Tarifler_TarifId] FOREIGN KEY ([TarifId]) REFERENCES [Tarifler] ([Id]) ON DELETE CASCADE
+);
+2025-06-27 02:33:22.699 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Favoriler_KullaniciId] ON [Favoriler] ([KullaniciId]);
+2025-06-27 02:33:22.709 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Favoriler_TarifId_KullaniciId] ON [Favoriler] ([TarifId], [KullaniciId]);
+2025-06-27 02:33:22.725 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Kullanicilar_Email] ON [Kullanicilar] ([Email]);
+2025-06-27 02:33:22.739 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Kullanicilar_KullaniciAdi] ON [Kullanicilar] ([KullaniciAdi]);
+2025-06-27 02:33:22.748 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Puanlamalar_KullaniciId] ON [Puanlamalar] ([KullaniciId]);
+2025-06-27 02:33:22.767 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_Puanlamalar_TarifId_KullaniciId] ON [Puanlamalar] ([TarifId], [KullaniciId]);
+2025-06-27 02:33:22.789 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Tarifler_KategoriId] ON [Tarifler] ([KategoriId]);
+2025-06-27 02:33:22.794 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Tarifler_KullaniciId] ON [Tarifler] ([KullaniciId]);
+2025-06-27 02:33:22.810 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_TarifMalzemeler_TarifId] ON [TarifMalzemeler] ([TarifId]);
+2025-06-27 02:33:22.830 +03:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_TarifResimleri_TarifId] ON [TarifResimleri] ([TarifId]);
+2025-06-27 02:33:22.839 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Yorumlar_KullaniciId] ON [Yorumlar] ([KullaniciId]);
+2025-06-27 02:33:22.898 +03:00 [INF] Executed DbCommand (56ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Yorumlar_TarifId] ON [Yorumlar] ([TarifId]);
+2025-06-27 02:33:22.943 +03:00 [INF] Executed DbCommand (44ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250626233247_InitialCreate', N'9.0.6');
+2025-06-27 02:33:23.007 +03:00 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-06-27 02:33:44.934 +03:00 [INF] Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-27 02:33:45.903 +03:00 [INF] Executed DbCommand (733ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-27 02:33:45.907 +03:00 [INF] Veritabanı başarıyla kontrol edildi/oluşturuldu.
+2025-06-27 02:33:45.988 +03:00 [INF] User profile is available. Using '/Users/mislinakotuyebakmaz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-27 02:33:46.188 +03:00 [INF] Now listening on: http://localhost:5300
+2025-06-27 02:33:46.204 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-27 02:33:46.211 +03:00 [INF] Hosting environment: Development
+2025-06-27 02:33:46.212 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/tarif-paylasim-platformu/backend/RecipeAPI
+2025-06-27 02:34:01.495 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - null null
+2025-06-27 02:34:02.017 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 532.572ms
+2025-06-27 02:34:39.405 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Auth/register - application/json 127
+2025-06-27 02:34:39.436 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-27 02:34:39.519 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.AuthController.Register (RecipeAPI)'
+2025-06-27 02:34:39.585 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[RecipeAPI.Models.DTOs.LoginResponseDto]] Register(RecipeAPI.Models.DTOs.RegisterDto) on controller RecipeAPI.Controllers.AuthController (RecipeAPI).
+2025-06-27 02:34:40.784 +03:00 [INF] Executed DbCommand (98ms) [Parameters=[@__registerDto_KullaniciAdi_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Kullanicilar] AS [k]
+        WHERE [k].[KullaniciAdi] = @__registerDto_KullaniciAdi_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-27 02:34:40.885 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__registerDto_Email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Kullanicilar] AS [k]
+        WHERE [k].[Email] = @__registerDto_Email_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-27 02:34:41.333 +03:00 [INF] Executed DbCommand (55ms) [Parameters=[@p0='?' (Size = 100), @p1='?' (DbType = Boolean), @p2='?' (Size = 100), @p3='?' (DbType = DateTime2), @p4='?' (Size = 50), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Kullanicilar] ([AdSoyad], [AktifMi], [Email], [KayitTarihi], [KullaniciAdi], [Sifre])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2025-06-27 02:34:41.418 +03:00 [INF] Yeni kullanıcı kaydı oluşturuldu: mislina
+2025-06-27 02:34:41.517 +03:00 [INF] Executing OkObjectResult, writing value of type 'RecipeAPI.Models.DTOs.LoginResponseDto'.
+2025-06-27 02:34:41.598 +03:00 [INF] Executed action RecipeAPI.Controllers.AuthController.Register (RecipeAPI) in 2004.3878ms
+2025-06-27 02:34:41.600 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.AuthController.Register (RecipeAPI)'
+2025-06-27 02:34:41.618 +03:00 [INF] HTTP POST /api/Auth/register responded 200 in 2183.7906 ms
+2025-06-27 02:34:41.700 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Auth/register - 200 null application/json; charset=utf-8 2294.6339ms
+2025-06-27 02:35:05.805 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Auth/login - application/json 66
+2025-06-27 02:35:05.817 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.AuthController.Login (RecipeAPI)'
+2025-06-27 02:35:05.848 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[RecipeAPI.Models.DTOs.LoginResponseDto]] Login(RecipeAPI.Models.DTOs.LoginDto) on controller RecipeAPI.Controllers.AuthController (RecipeAPI).
+2025-06-27 02:35:06.160 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[@__loginDto_KullaniciAdiVeyaEmail_0='?' (Size = 50), @__loginDto_KullaniciAdiVeyaEmail_0_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [k].[Id], [k].[AdSoyad], [k].[AktifMi], [k].[Email], [k].[KayitTarihi], [k].[KullaniciAdi], [k].[Sifre]
+FROM [Kullanicilar] AS [k]
+WHERE [k].[KullaniciAdi] = @__loginDto_KullaniciAdiVeyaEmail_0 OR [k].[Email] = @__loginDto_KullaniciAdiVeyaEmail_0_1
+2025-06-27 02:35:06.178 +03:00 [INF] Kullanıcı giriş yaptı: mislina
+2025-06-27 02:35:06.263 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tarifler] AS [t]
+WHERE [t].[KullaniciId] = @__user_Id_0
+2025-06-27 02:35:06.267 +03:00 [INF] Executing OkObjectResult, writing value of type 'RecipeAPI.Models.DTOs.LoginResponseDto'.
+2025-06-27 02:35:06.267 +03:00 [INF] Executed action RecipeAPI.Controllers.AuthController.Login (RecipeAPI) in 419.1245ms
+2025-06-27 02:35:06.268 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.AuthController.Login (RecipeAPI)'
+2025-06-27 02:35:06.271 +03:00 [INF] HTTP POST /api/Auth/login responded 200 in 462.8857 ms
+2025-06-27 02:35:06.273 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Auth/login - 200 null application/json; charset=utf-8 468.0483ms
+2025-06-27 02:37:19.612 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Recipes - application/json 293
+2025-06-27 02:37:19.773 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.RecipesController.CreateRecipe (RecipeAPI)'
+2025-06-27 02:37:19.781 +03:00 [INF] Route matched with {action = "CreateRecipe", controller = "Recipes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateRecipe(RecipeAPI.Controllers.RecipeCreateDto) on controller RecipeAPI.Controllers.RecipesController (RecipeAPI).
+2025-06-27 02:37:20.166 +03:00 [INF] Executed DbCommand (104ms) [Parameters=[@p0='?' (Size = 1000), @p1='?' (DbType = Boolean), @p2='?' (Size = 200), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2), @p10='?' (DbType = Int32), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Tarifler] ([Aciklama], [AktifMi], [Baslik], [GuncellemeTarihi], [Hazirlanis], [HazirlikSuresi], [KategoriId], [KullaniciId], [Malzemeler], [OlusturmaTarihi], [PisirmeSuresi], [Porsiyon], [ResimUrl], [ZorlukDerecesi])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13);
+2025-06-27 02:37:20.249 +03:00 [ERR] An exception occurred in the database while saving changes for context type 'RecipeAPI.Data.RecipeDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Tarifler_Kategoriler_KategoriId". The conflict occurred in database "RecipeDB", table "dbo.Kategoriler", column 'Id'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:1a82cd1f-c473-4074-ab8c-87c64d6c0428
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Tarifler_Kategoriler_KategoriId". The conflict occurred in database "RecipeDB", table "dbo.Kategoriler", column 'Id'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:1a82cd1f-c473-4074-ab8c-87c64d6c0428
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-06-27 02:37:20.268 +03:00 [INF] Executed action RecipeAPI.Controllers.RecipesController.CreateRecipe (RecipeAPI) in 473.155ms
+2025-06-27 02:37:20.271 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.RecipesController.CreateRecipe (RecipeAPI)'
+2025-06-27 02:37:20.281 +03:00 [ERR] HTTP POST /api/Recipes responded 500 in 662.8561 ms
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Tarifler_Kategoriler_KategoriId". The conflict occurred in database "RecipeDB", table "dbo.Kategoriler", column 'Id'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:1a82cd1f-c473-4074-ab8c-87c64d6c0428
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at RecipeAPI.Controllers.RecipesController.CreateRecipe(RecipeCreateDto recipeDto) in /Users/mislinakotuyebakmaz/tarif-paylasim-platformu/backend/RecipeAPI/Controllers/RecipesController.cs:line 77
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-06-27 02:37:20.333 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Tarifler_Kategoriler_KategoriId". The conflict occurred in database "RecipeDB", table "dbo.Kategoriler", column 'Id'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:1a82cd1f-c473-4074-ab8c-87c64d6c0428
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at RecipeAPI.Controllers.RecipesController.CreateRecipe(RecipeCreateDto recipeDto) in /Users/mislinakotuyebakmaz/tarif-paylasim-platformu/backend/RecipeAPI/Controllers/RecipesController.cs:line 77
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-27 02:37:20.379 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Recipes - 500 null text/plain; charset=utf-8 766.6323ms
+2025-06-27 02:39:30.995 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Categories - application/json 84
+2025-06-27 02:39:30.998 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.CategoriesController.PostCategory (RecipeAPI)'
+2025-06-27 02:39:31.017 +03:00 [INF] Route matched with {action = "PostCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[RecipeAPI.Models.DTOs.CategoryDto]] PostCategory(RecipeAPI.Models.DTOs.CreateCategoryDto) on controller RecipeAPI.Controllers.CategoriesController (RecipeAPI).
+2025-06-27 02:39:31.086 +03:00 [INF] Executed DbCommand (20ms) [Parameters=[@p0='?' (Size = 500), @p1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Kategoriler] ([Aciklama], [Ad])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1);
+2025-06-27 02:39:31.099 +03:00 [INF] Yeni kategori oluşturuldu: Ana Yemekler
+2025-06-27 02:39:31.110 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'RecipeAPI.Models.DTOs.CategoryDto'.
+2025-06-27 02:39:31.168 +03:00 [INF] Executed action RecipeAPI.Controllers.CategoriesController.PostCategory (RecipeAPI) in 150.4313ms
+2025-06-27 02:39:31.174 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.CategoriesController.PostCategory (RecipeAPI)'
+2025-06-27 02:39:31.187 +03:00 [INF] HTTP POST /api/Categories responded 201 in 190.0714 ms
+2025-06-27 02:39:31.192 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Categories - 201 null application/json; charset=utf-8 196.9999ms
+2025-06-27 02:39:46.263 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Categories - application/json 78
+2025-06-27 02:39:46.266 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.CategoriesController.PostCategory (RecipeAPI)'
+2025-06-27 02:39:46.266 +03:00 [INF] Route matched with {action = "PostCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[RecipeAPI.Models.DTOs.CategoryDto]] PostCategory(RecipeAPI.Models.DTOs.CreateCategoryDto) on controller RecipeAPI.Controllers.CategoriesController (RecipeAPI).
+2025-06-27 02:39:46.354 +03:00 [INF] Executed DbCommand (71ms) [Parameters=[@p0='?' (Size = 500), @p1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Kategoriler] ([Aciklama], [Ad])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1);
+2025-06-27 02:39:46.356 +03:00 [INF] Yeni kategori oluşturuldu: Tatlılar
+2025-06-27 02:39:46.357 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'RecipeAPI.Models.DTOs.CategoryDto'.
+2025-06-27 02:39:46.358 +03:00 [INF] Executed action RecipeAPI.Controllers.CategoriesController.PostCategory (RecipeAPI) in 90.9144ms
+2025-06-27 02:39:46.358 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.CategoriesController.PostCategory (RecipeAPI)'
+2025-06-27 02:39:46.358 +03:00 [INF] HTTP POST /api/Categories responded 201 in 93.3606 ms
+2025-06-27 02:39:46.359 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Categories - 201 null application/json; charset=utf-8 95.8461ms
+2025-06-27 02:40:02.358 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Recipes - application/json 293
+2025-06-27 02:40:02.363 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.RecipesController.CreateRecipe (RecipeAPI)'
+2025-06-27 02:40:02.364 +03:00 [INF] Route matched with {action = "CreateRecipe", controller = "Recipes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateRecipe(RecipeAPI.Controllers.RecipeCreateDto) on controller RecipeAPI.Controllers.RecipesController (RecipeAPI).
+2025-06-27 02:40:02.432 +03:00 [INF] Executed DbCommand (55ms) [Parameters=[@p0='?' (Size = 1000), @p1='?' (DbType = Boolean), @p2='?' (Size = 200), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2), @p10='?' (DbType = Int32), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Tarifler] ([Aciklama], [AktifMi], [Baslik], [GuncellemeTarihi], [Hazirlanis], [HazirlikSuresi], [KategoriId], [KullaniciId], [Malzemeler], [OlusturmaTarihi], [PisirmeSuresi], [Porsiyon], [ResimUrl], [ZorlukDerecesi])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13);
+2025-06-27 02:40:02.454 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'RecipeAPI.Models.Entities.Recipe'.
+2025-06-27 02:40:02.705 +03:00 [INF] Executed action RecipeAPI.Controllers.RecipesController.CreateRecipe (RecipeAPI) in 340.3037ms
+2025-06-27 02:40:02.750 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.RecipesController.CreateRecipe (RecipeAPI)'
+2025-06-27 02:40:02.750 +03:00 [INF] HTTP POST /api/Recipes responded 201 in 391.8332 ms
+2025-06-27 02:40:02.751 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Recipes - 201 null application/json; charset=utf-8 393.4322ms
+2025-06-27 02:51:56.909 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/index.html - null null
+2025-06-27 02:51:57.143 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/index.html - 200 null text/html;charset=utf-8 233.5352ms
+2025-06-27 02:51:57.631 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - null null
+2025-06-27 02:51:57.691 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 59.9022ms
+2025-06-27 03:00:50.792 +03:00 [INF] Application is shutting down...
+2025-06-27 03:08:36.797 +03:00 [INF] Executed DbCommand (58ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-27 03:08:37.110 +03:00 [INF] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-27 03:08:37.116 +03:00 [INF] Veritabanı başarıyla kontrol edildi/oluşturuldu.
+2025-06-27 03:08:37.192 +03:00 [INF] User profile is available. Using '/Users/mislinakotuyebakmaz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-27 03:08:37.368 +03:00 [INF] Now listening on: http://localhost:5300
+2025-06-27 03:08:37.390 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-27 03:08:37.399 +03:00 [INF] Hosting environment: Development
+2025-06-27 03:08:37.422 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/tarif-paylasim-platformu/backend/RecipeAPI
+2025-06-27 03:08:41.721 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - null null
+2025-06-27 03:08:42.319 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 525.4928ms
+2025-06-27 03:10:21.336 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Categories - application/json 84
+2025-06-27 03:10:21.386 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-27 03:10:21.463 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.CategoriesController.PostCategory (RecipeAPI)'
+2025-06-27 03:10:21.534 +03:00 [INF] Route matched with {action = "PostCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[RecipeAPI.Models.DTOs.CategoryDto]] PostCategory(RecipeAPI.Models.DTOs.CreateCategoryDto) on controller RecipeAPI.Controllers.CategoriesController (RecipeAPI).
+2025-06-27 03:10:22.651 +03:00 [INF] Executed DbCommand (67ms) [Parameters=[@p0='?' (Size = 500), @p1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Kategoriler] ([Aciklama], [Ad])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1);
+2025-06-27 03:10:22.731 +03:00 [INF] Yeni kategori oluşturuldu: Ana Yemekler
+2025-06-27 03:10:22.757 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'RecipeAPI.Models.DTOs.CategoryDto'.
+2025-06-27 03:10:22.857 +03:00 [INF] Executed action RecipeAPI.Controllers.CategoriesController.PostCategory (RecipeAPI) in 1311.8872ms
+2025-06-27 03:10:22.858 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.CategoriesController.PostCategory (RecipeAPI)'
+2025-06-27 03:10:22.886 +03:00 [INF] HTTP POST /api/Categories responded 201 in 1488.0044 ms
+2025-06-27 03:10:22.935 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Categories - 201 null application/json; charset=utf-8 1600.2088ms
+2025-06-27 03:11:01.117 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Auth/register - application/json 127
+2025-06-27 03:11:01.126 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.AuthController.Register (RecipeAPI)'
+2025-06-27 03:11:01.159 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[RecipeAPI.Models.DTOs.LoginResponseDto]] Register(RecipeAPI.Models.DTOs.RegisterDto) on controller RecipeAPI.Controllers.AuthController (RecipeAPI).
+2025-06-27 03:11:01.918 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__registerDto_KullaniciAdi_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Kullanicilar] AS [k]
+        WHERE [k].[KullaniciAdi] = @__registerDto_KullaniciAdi_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-27 03:11:01.939 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-06-27 03:11:01.940 +03:00 [INF] Executed action RecipeAPI.Controllers.AuthController.Register (RecipeAPI) in 779.0658ms
+2025-06-27 03:11:01.950 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.AuthController.Register (RecipeAPI)'
+2025-06-27 03:11:01.953 +03:00 [INF] HTTP POST /api/Auth/register responded 400 in 831.9648 ms
+2025-06-27 03:11:01.970 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Auth/register - 400 null text/plain; charset=utf-8 853.2731ms
+2025-06-27 03:11:34.885 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Auth/register - application/json 111
+2025-06-27 03:11:34.896 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.AuthController.Register (RecipeAPI)'
+2025-06-27 03:11:34.897 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[RecipeAPI.Models.DTOs.LoginResponseDto]] Register(RecipeAPI.Models.DTOs.RegisterDto) on controller RecipeAPI.Controllers.AuthController (RecipeAPI).
+2025-06-27 03:11:34.935 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[@__registerDto_KullaniciAdi_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Kullanicilar] AS [k]
+        WHERE [k].[KullaniciAdi] = @__registerDto_KullaniciAdi_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-27 03:11:34.958 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__registerDto_Email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Kullanicilar] AS [k]
+        WHERE [k].[Email] = @__registerDto_Email_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-27 03:11:35.083 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[@p0='?' (Size = 100), @p1='?' (DbType = Boolean), @p2='?' (Size = 100), @p3='?' (DbType = DateTime2), @p4='?' (Size = 50), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Kullanicilar] ([AdSoyad], [AktifMi], [Email], [KayitTarihi], [KullaniciAdi], [Sifre])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2025-06-27 03:11:35.089 +03:00 [INF] Yeni kullanıcı kaydı oluşturuldu: yasar
+2025-06-27 03:11:35.238 +03:00 [INF] Executing OkObjectResult, writing value of type 'RecipeAPI.Models.DTOs.LoginResponseDto'.
+2025-06-27 03:11:35.291 +03:00 [INF] Executed action RecipeAPI.Controllers.AuthController.Register (RecipeAPI) in 393.397ms
+2025-06-27 03:11:35.292 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.AuthController.Register (RecipeAPI)'
+2025-06-27 03:11:35.292 +03:00 [INF] HTTP POST /api/Auth/register responded 200 in 403.6252 ms
+2025-06-27 03:11:35.294 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Auth/register - 200 null application/json; charset=utf-8 408.1876ms
+2025-06-27 03:12:11.508 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Auth/login - application/json 62
+2025-06-27 03:12:11.510 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.AuthController.Login (RecipeAPI)'
+2025-06-27 03:12:11.528 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[RecipeAPI.Models.DTOs.LoginResponseDto]] Login(RecipeAPI.Models.DTOs.LoginDto) on controller RecipeAPI.Controllers.AuthController (RecipeAPI).
+2025-06-27 03:12:11.784 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__loginDto_KullaniciAdiVeyaEmail_0='?' (Size = 50), @__loginDto_KullaniciAdiVeyaEmail_0_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [k].[Id], [k].[AdSoyad], [k].[AktifMi], [k].[Email], [k].[KayitTarihi], [k].[KullaniciAdi], [k].[Sifre]
+FROM [Kullanicilar] AS [k]
+WHERE [k].[KullaniciAdi] = @__loginDto_KullaniciAdiVeyaEmail_0 OR [k].[Email] = @__loginDto_KullaniciAdiVeyaEmail_0_1
+2025-06-27 03:12:11.810 +03:00 [INF] Kullanıcı giriş yaptı: yasar
+2025-06-27 03:12:11.911 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tarifler] AS [t]
+WHERE [t].[KullaniciId] = @__user_Id_0
+2025-06-27 03:12:11.935 +03:00 [INF] Executing OkObjectResult, writing value of type 'RecipeAPI.Models.DTOs.LoginResponseDto'.
+2025-06-27 03:12:11.942 +03:00 [INF] Executed action RecipeAPI.Controllers.AuthController.Login (RecipeAPI) in 413.5238ms
+2025-06-27 03:12:11.942 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.AuthController.Login (RecipeAPI)'
+2025-06-27 03:12:11.942 +03:00 [INF] HTTP POST /api/Auth/login responded 200 in 432.4591 ms
+2025-06-27 03:12:11.942 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Auth/login - 200 null application/json; charset=utf-8 434.4474ms
+2025-06-27 03:15:20.220 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Recipes - application/json 294
+2025-06-27 03:15:20.556 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.RecipesController.CreateRecipe (RecipeAPI)'
+2025-06-27 03:15:20.561 +03:00 [INF] Route matched with {action = "CreateRecipe", controller = "Recipes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateRecipe(RecipeAPI.Models.DTOs.RecipeCreateDto) on controller RecipeAPI.Controllers.RecipesController (RecipeAPI).
+2025-06-27 03:15:20.802 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[@p0='?' (Size = 1000), @p1='?' (DbType = Boolean), @p2='?' (Size = 200), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2), @p10='?' (DbType = Int32), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Tarifler] ([Aciklama], [AktifMi], [Baslik], [GuncellemeTarihi], [Hazirlanis], [HazirlikSuresi], [KategoriId], [KullaniciId], [Malzemeler], [OlusturmaTarihi], [PisirmeSuresi], [Porsiyon], [ResimUrl], [ZorlukDerecesi])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13);
+2025-06-27 03:15:20.812 +03:00 [INF] Executing CreatedAtActionResult, writing value of type 'RecipeAPI.Models.Entities.Recipe'.
+2025-06-27 03:15:20.895 +03:00 [INF] Executed action RecipeAPI.Controllers.RecipesController.CreateRecipe (RecipeAPI) in 319.7698ms
+2025-06-27 03:15:20.895 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.RecipesController.CreateRecipe (RecipeAPI)'
+2025-06-27 03:15:20.895 +03:00 [INF] HTTP POST /api/Recipes responded 201 in 665.5316 ms
+2025-06-27 03:15:20.895 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Recipes - 201 null application/json; charset=utf-8 675.1949ms
+2025-06-27 03:16:00.595 +03:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5300/api/Recipes/1 - null null
+2025-06-27 03:16:00.637 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.RecipesController.DeleteRecipe (RecipeAPI)'
+2025-06-27 03:16:00.695 +03:00 [INF] Route matched with {action = "DeleteRecipe", controller = "Recipes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteRecipe(Int32) on controller RecipeAPI.Controllers.RecipesController (RecipeAPI).
+2025-06-27 03:16:00.809 +03:00 [INF] Executed DbCommand (19ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Aciklama], [t].[AktifMi], [t].[Baslik], [t].[GuncellemeTarihi], [t].[Hazirlanis], [t].[HazirlikSuresi], [t].[KategoriId], [t].[KullaniciId], [t].[Malzemeler], [t].[OlusturmaTarihi], [t].[PisirmeSuresi], [t].[Porsiyon], [t].[ResimUrl], [t].[ZorlukDerecesi]
+FROM [Tarifler] AS [t]
+WHERE [t].[Id] = @__p_0
+2025-06-27 03:16:00.810 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-06-27 03:16:00.812 +03:00 [INF] Executed action RecipeAPI.Controllers.RecipesController.DeleteRecipe (RecipeAPI) in 116.7352ms
+2025-06-27 03:16:00.812 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.RecipesController.DeleteRecipe (RecipeAPI)'
+2025-06-27 03:16:00.812 +03:00 [INF] HTTP DELETE /api/Recipes/1 responded 404 in 213.8899 ms
+2025-06-27 03:16:00.813 +03:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5300/api/Recipes/1 - 404 null text/plain; charset=utf-8 217.7575ms
+2025-06-27 03:16:45.182 +03:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:5300/api/Recipes/3 - null null
+2025-06-27 03:16:45.186 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.RecipesController.DeleteRecipe (RecipeAPI)'
+2025-06-27 03:16:45.187 +03:00 [INF] Route matched with {action = "DeleteRecipe", controller = "Recipes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteRecipe(Int32) on controller RecipeAPI.Controllers.RecipesController (RecipeAPI).
+2025-06-27 03:16:45.231 +03:00 [INF] Executed DbCommand (24ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Aciklama], [t].[AktifMi], [t].[Baslik], [t].[GuncellemeTarihi], [t].[Hazirlanis], [t].[HazirlikSuresi], [t].[KategoriId], [t].[KullaniciId], [t].[Malzemeler], [t].[OlusturmaTarihi], [t].[PisirmeSuresi], [t].[Porsiyon], [t].[ResimUrl], [t].[ZorlukDerecesi]
+FROM [Tarifler] AS [t]
+WHERE [t].[Id] = @__p_0
+2025-06-27 03:16:45.505 +03:00 [INF] Executed DbCommand (249ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Tarifler]
+OUTPUT 1
+WHERE [Id] = @p0;
+2025-06-27 03:16:45.535 +03:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2025-06-27 03:16:45.535 +03:00 [INF] Executed action RecipeAPI.Controllers.RecipesController.DeleteRecipe (RecipeAPI) in 346.7642ms
+2025-06-27 03:16:45.536 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.RecipesController.DeleteRecipe (RecipeAPI)'
+2025-06-27 03:16:45.536 +03:00 [INF] HTTP DELETE /api/Recipes/3 responded 204 in 353.0328 ms
+2025-06-27 03:16:45.537 +03:00 [INF] Request finished HTTP/1.1 DELETE http://localhost:5300/api/Recipes/3 - 204 null null 355.0308ms
+2025-06-27 03:17:08.314 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/api/Recipes/1 - null null
+2025-06-27 03:17:08.338 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.RecipesController.GetRecipeById (RecipeAPI)'
+2025-06-27 03:17:08.351 +03:00 [INF] Route matched with {action = "GetRecipeById", controller = "Recipes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRecipeById(Int32) on controller RecipeAPI.Controllers.RecipesController (RecipeAPI).
+2025-06-27 03:17:08.527 +03:00 [INF] Executed DbCommand (48ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Aciklama], [t].[AktifMi], [t].[Baslik], [t].[GuncellemeTarihi], [t].[Hazirlanis], [t].[HazirlikSuresi], [t].[KategoriId], [t].[KullaniciId], [t].[Malzemeler], [t].[OlusturmaTarihi], [t].[PisirmeSuresi], [t].[Porsiyon], [t].[ResimUrl], [t].[ZorlukDerecesi], [k].[Id], [k].[AdSoyad], [k].[AktifMi], [k].[Email], [k].[KayitTarihi], [k].[KullaniciAdi], [k].[Sifre]
+FROM [Tarifler] AS [t]
+INNER JOIN [Kullanicilar] AS [k] ON [t].[KullaniciId] = [k].[Id]
+WHERE [t].[Id] = @__id_0
+2025-06-27 03:17:08.529 +03:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-06-27 03:17:08.585 +03:00 [INF] Executed action RecipeAPI.Controllers.RecipesController.GetRecipeById (RecipeAPI) in 232.4973ms
+2025-06-27 03:17:08.585 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.RecipesController.GetRecipeById (RecipeAPI)'
+2025-06-27 03:17:08.585 +03:00 [INF] HTTP GET /api/Recipes/1 responded 404 in 248.6569 ms
+2025-06-27 03:17:08.586 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/api/Recipes/1 - 404 null application/problem+json; charset=utf-8 271.5658ms
+2025-06-27 03:17:32.683 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/api/Recipes/3 - null null
+2025-06-27 03:17:32.684 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.RecipesController.GetRecipeById (RecipeAPI)'
+2025-06-27 03:17:32.684 +03:00 [INF] Route matched with {action = "GetRecipeById", controller = "Recipes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRecipeById(Int32) on controller RecipeAPI.Controllers.RecipesController (RecipeAPI).
+2025-06-27 03:17:32.720 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Aciklama], [t].[AktifMi], [t].[Baslik], [t].[GuncellemeTarihi], [t].[Hazirlanis], [t].[HazirlikSuresi], [t].[KategoriId], [t].[KullaniciId], [t].[Malzemeler], [t].[OlusturmaTarihi], [t].[PisirmeSuresi], [t].[Porsiyon], [t].[ResimUrl], [t].[ZorlukDerecesi], [k].[Id], [k].[AdSoyad], [k].[AktifMi], [k].[Email], [k].[KayitTarihi], [k].[KullaniciAdi], [k].[Sifre]
+FROM [Tarifler] AS [t]
+INNER JOIN [Kullanicilar] AS [k] ON [t].[KullaniciId] = [k].[Id]
+WHERE [t].[Id] = @__id_0
+2025-06-27 03:17:32.721 +03:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-06-27 03:17:32.722 +03:00 [INF] Executed action RecipeAPI.Controllers.RecipesController.GetRecipeById (RecipeAPI) in 35.1303ms
+2025-06-27 03:17:32.722 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.RecipesController.GetRecipeById (RecipeAPI)'
+2025-06-27 03:17:32.722 +03:00 [INF] HTTP GET /api/Recipes/3 responded 404 in 38.6565 ms
+2025-06-27 03:17:32.723 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/api/Recipes/3 - 404 null application/problem+json; charset=utf-8 39.9424ms
+2025-06-27 03:32:18.137 +03:00 [INF] Application is shutting down...

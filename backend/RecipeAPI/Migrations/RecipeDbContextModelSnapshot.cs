@@ -32,11 +32,13 @@ namespace RecipeAPI.Migrations
 
                     b.Property<string>("Aciklama")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("Ad")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 
@@ -54,15 +56,16 @@ namespace RecipeAPI.Migrations
                     b.Property<int>("KullaniciId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("OlusturmaTarihi")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("TarifId")
                         .HasColumnType("int");
 
                     b.Property<string>("Yorum")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("YorumTarihi")
-                        .HasColumnType("datetime2");
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
 
                     b.HasKey("Id");
 
@@ -73,7 +76,7 @@ namespace RecipeAPI.Migrations
                     b.ToTable("Yorumlar", (string)null);
                 });
 
-            modelBuilder.Entity("RecipeAPI.Models.Entities.Rating", b =>
+            modelBuilder.Entity("RecipeAPI.Models.Entities.Favorite", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -81,8 +84,29 @@ namespace RecipeAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("DegerlendirmeTarihi")
-                        .HasColumnType("datetime2");
+                    b.Property<int>("KullaniciId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TarifId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("KullaniciId");
+
+                    b.HasIndex("TarifId", "KullaniciId")
+                        .IsUnique();
+
+                    b.ToTable("Favoriler", (string)null);
+                });
+
+            modelBuilder.Entity("RecipeAPI.Models.Entities.Rating", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("KullaniciId")
                         .HasColumnType("int");
@@ -95,12 +119,12 @@ namespace RecipeAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("TarifId");
+                    b.HasIndex("KullaniciId");
 
-                    b.HasIndex("KullaniciId", "TarifId")
+                    b.HasIndex("TarifId", "KullaniciId")
                         .IsUnique();
 
-                    b.ToTable("Degerlendirmeler", (string)null);
+                    b.ToTable("Puanlamalar", (string)null);
                 });
 
             modelBuilder.Entity("RecipeAPI.Models.Entities.Recipe", b =>
@@ -113,22 +137,25 @@ namespace RecipeAPI.Migrations
 
                     b.Property<string>("Aciklama")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<bool>("AktifMi")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Baslik")
                         .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime?>("GuncellemeTarihi")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Hazirlanis")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("EklenmeTarihi")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("GuncellenmeTarihi")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("HazirlamaSuresi")
-                        .HasColumnType("int");
-
-                    b.Property<int>("KacKisilik")
+                    b.Property<int?>("HazirlikSuresi")
                         .HasColumnType("int");
 
                     b.Property<int>("KategoriId")
@@ -137,14 +164,25 @@ namespace RecipeAPI.Migrations
                     b.Property<int>("KullaniciId")
                         .HasColumnType("int");
 
-                    b.Property<int>("PisirmeSuresi")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Talimatlar")
+                    b.Property<string>("Malzemeler")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ZorlukSeviyesi")
+                    b.Property<DateTime>("OlusturmaTarihi")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("PisirmeSuresi")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Porsiyon")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ResimUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ZorlukDerecesi")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -165,16 +203,15 @@ namespace RecipeAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<bool>("AnaResimMi")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("DosyaAdi")
+                    b.Property<string>("Aciklama")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
-                    b.Property<string>("DosyaYolu")
+                    b.Property<string>("ResimUrl")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<int>("TarifId")
                         .HasColumnType("int");
@@ -196,11 +233,13 @@ namespace RecipeAPI.Migrations
 
                     b.Property<string>("Birim")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("MalzemeAdi")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<decimal>("Miktar")
                         .HasPrecision(10, 2)
@@ -226,27 +265,36 @@ namespace RecipeAPI.Migrations
 
                     b.Property<string>("AdSoyad")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<bool>("AktifMi")
                         .HasColumnType("bit");
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime>("KayitTarihi")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("KullaniciAdi")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Sifre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Email")
+                        .IsUnique();
+
+                    b.HasIndex("KullaniciAdi")
+                        .IsUnique();
 
                     b.ToTable("Kullanicilar", (string)null);
                 });
@@ -270,16 +318,35 @@ namespace RecipeAPI.Migrations
                     b.Navigation("Tarif");
                 });
 
-            modelBuilder.Entity("RecipeAPI.Models.Entities.Rating", b =>
+            modelBuilder.Entity("RecipeAPI.Models.Entities.Favorite", b =>
                 {
                     b.HasOne("RecipeAPI.Models.Entities.User", "Kullanici")
-                        .WithMany("Degerlendirmeler")
+                        .WithMany("Favoriler")
                         .HasForeignKey("KullaniciId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("RecipeAPI.Models.Entities.Recipe", "Tarif")
-                        .WithMany("Degerlendirmeler")
+                        .WithMany("Favoriler")
+                        .HasForeignKey("TarifId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Kullanici");
+
+                    b.Navigation("Tarif");
+                });
+
+            modelBuilder.Entity("RecipeAPI.Models.Entities.Rating", b =>
+                {
+                    b.HasOne("RecipeAPI.Models.Entities.User", "Kullanici")
+                        .WithMany("Puanlamalar")
+                        .HasForeignKey("KullaniciId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("RecipeAPI.Models.Entities.Recipe", "Tarif")
+                        .WithMany("Puanlamalar")
                         .HasForeignKey("TarifId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -294,13 +361,13 @@ namespace RecipeAPI.Migrations
                     b.HasOne("RecipeAPI.Models.Entities.Category", "Kategori")
                         .WithMany("Tarifler")
                         .HasForeignKey("KategoriId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("RecipeAPI.Models.Entities.User", "Kullanici")
                         .WithMany("Tarifler")
                         .HasForeignKey("KullaniciId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Kategori");
@@ -311,7 +378,7 @@ namespace RecipeAPI.Migrations
             modelBuilder.Entity("RecipeAPI.Models.Entities.RecipeImage", b =>
                 {
                     b.HasOne("RecipeAPI.Models.Entities.Recipe", "Tarif")
-                        .WithMany("Resimler")
+                        .WithMany("TarifResimleri")
                         .HasForeignKey("TarifId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -337,18 +404,22 @@ namespace RecipeAPI.Migrations
 
             modelBuilder.Entity("RecipeAPI.Models.Entities.Recipe", b =>
                 {
-                    b.Navigation("Degerlendirmeler");
+                    b.Navigation("Favoriler");
 
-                    b.Navigation("Resimler");
+                    b.Navigation("Puanlamalar");
 
                     b.Navigation("TarifMalzemeler");
+
+                    b.Navigation("TarifResimleri");
 
                     b.Navigation("Yorumlar");
                 });
 
             modelBuilder.Entity("RecipeAPI.Models.Entities.User", b =>
                 {
-                    b.Navigation("Degerlendirmeler");
+                    b.Navigation("Favoriler");
+
+                    b.Navigation("Puanlamalar");
 
                     b.Navigation("Tarifler");
 
