@@ -1499,3 +1499,152 @@ VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
 2025-06-27 08:18:55.548 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.AuthController.Register (RecipeAPI)'
 2025-06-27 08:18:55.551 +03:00 [INF] HTTP POST /api/auth/register responded 200 in 1521.7143 ms
 2025-06-27 08:18:55.561 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/auth/register - 200 null application/json; charset=utf-8 1535.8433ms
+2025-06-27 15:42:28.106 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5300/api/recipes - null null
+2025-06-27 15:42:28.262 +03:00 [INF] CORS policy execution successful.
+2025-06-27 15:42:28.279 +03:00 [INF] HTTP OPTIONS /api/recipes responded 204 in 12.8497 ms
+2025-06-27 15:42:28.300 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5300/api/recipes - 204 null null 208.9189ms
+2025-06-27 15:42:28.308 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/api/recipes - null null
+2025-06-27 15:42:28.479 +03:00 [INF] CORS policy execution successful.
+2025-06-27 15:42:28.739 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.RecipesController.GetRecipes (RecipeAPI)'
+2025-06-27 15:42:28.809 +03:00 [INF] Route matched with {action = "GetRecipes", controller = "Recipes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRecipes(System.String, System.Nullable`1[System.Int32]) on controller RecipeAPI.Controllers.RecipesController (RecipeAPI).
+2025-06-27 15:42:30.335 +03:00 [INF] Executed DbCommand (175ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Baslik], [t].[Aciklama], [k].[KullaniciAdi], [t].[OlusturmaTarihi]
+FROM [Tarifler] AS [t]
+INNER JOIN [Kullanicilar] AS [k] ON [t].[KullaniciId] = [k].[Id]
+2025-06-27 15:42:30.359 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType1`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], RecipeAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-27 15:42:30.420 +03:00 [INF] Executed action RecipeAPI.Controllers.RecipesController.GetRecipes (RecipeAPI) in 1611.0149ms
+2025-06-27 15:42:30.421 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.RecipesController.GetRecipes (RecipeAPI)'
+2025-06-27 15:42:30.421 +03:00 [INF] HTTP GET /api/recipes responded 200 in 1959.1562 ms
+2025-06-27 15:42:30.422 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/api/recipes - 200 null application/json; charset=utf-8 2114.0016ms
+2025-06-27 15:42:38.823 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/index.html - null null
+2025-06-27 15:42:39.829 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/index.html - 200 null text/html;charset=utf-8 1006.0143ms
+2025-06-27 15:42:42.632 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - null null
+2025-06-27 15:42:42.920 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 287.5827ms
+2025-06-27 15:42:47.742 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5300/api/recipes - null null
+2025-06-27 15:42:47.744 +03:00 [INF] CORS policy execution successful.
+2025-06-27 15:42:47.744 +03:00 [INF] HTTP OPTIONS /api/recipes responded 204 in 0.2660 ms
+2025-06-27 15:42:47.744 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5300/api/recipes - 204 null null 1.9959ms
+2025-06-27 15:42:47.747 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5300/api/recipes - null null
+2025-06-27 15:42:47.747 +03:00 [INF] CORS policy execution successful.
+2025-06-27 15:42:47.748 +03:00 [INF] HTTP OPTIONS /api/recipes responded 204 in 0.7781 ms
+2025-06-27 15:42:47.748 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5300/api/recipes - 204 null null 1.7185ms
+2025-06-27 15:42:47.757 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/api/recipes - null null
+2025-06-27 15:42:47.757 +03:00 [INF] CORS policy execution successful.
+2025-06-27 15:42:47.761 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.RecipesController.GetRecipes (RecipeAPI)'
+2025-06-27 15:42:47.771 +03:00 [INF] Route matched with {action = "GetRecipes", controller = "Recipes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRecipes(System.String, System.Nullable`1[System.Int32]) on controller RecipeAPI.Controllers.RecipesController (RecipeAPI).
+2025-06-27 15:42:47.835 +03:00 [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Baslik], [t].[Aciklama], [k].[KullaniciAdi], [t].[OlusturmaTarihi]
+FROM [Tarifler] AS [t]
+INNER JOIN [Kullanicilar] AS [k] ON [t].[KullaniciId] = [k].[Id]
+2025-06-27 15:42:47.835 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType1`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], RecipeAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-27 15:42:47.836 +03:00 [INF] Executed action RecipeAPI.Controllers.RecipesController.GetRecipes (RecipeAPI) in 64.0633ms
+2025-06-27 15:42:47.836 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.RecipesController.GetRecipes (RecipeAPI)'
+2025-06-27 15:42:47.836 +03:00 [INF] HTTP GET /api/recipes responded 200 in 79.0346 ms
+2025-06-27 15:42:47.837 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/api/recipes - 200 null application/json; charset=utf-8 80.3712ms
+2025-06-27 15:42:47.843 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/api/recipes - null null
+2025-06-27 15:42:47.845 +03:00 [INF] CORS policy execution successful.
+2025-06-27 15:42:47.845 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.RecipesController.GetRecipes (RecipeAPI)'
+2025-06-27 15:42:47.846 +03:00 [INF] Route matched with {action = "GetRecipes", controller = "Recipes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRecipes(System.String, System.Nullable`1[System.Int32]) on controller RecipeAPI.Controllers.RecipesController (RecipeAPI).
+2025-06-27 15:42:47.865 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Baslik], [t].[Aciklama], [k].[KullaniciAdi], [t].[OlusturmaTarihi]
+FROM [Tarifler] AS [t]
+INNER JOIN [Kullanicilar] AS [k] ON [t].[KullaniciId] = [k].[Id]
+2025-06-27 15:42:47.865 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType1`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], RecipeAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-27 15:42:47.866 +03:00 [INF] Executed action RecipeAPI.Controllers.RecipesController.GetRecipes (RecipeAPI) in 19.7692ms
+2025-06-27 15:42:47.866 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.RecipesController.GetRecipes (RecipeAPI)'
+2025-06-27 15:42:47.866 +03:00 [INF] HTTP GET /api/recipes responded 200 in 21.2722 ms
+2025-06-27 15:42:47.866 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/api/recipes - 200 null application/json; charset=utf-8 22.8996ms
+2025-06-27 15:42:50.759 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/api/recipes - null null
+2025-06-27 15:42:50.764 +03:00 [INF] CORS policy execution successful.
+2025-06-27 15:42:50.768 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.RecipesController.GetRecipes (RecipeAPI)'
+2025-06-27 15:42:50.771 +03:00 [INF] Route matched with {action = "GetRecipes", controller = "Recipes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRecipes(System.String, System.Nullable`1[System.Int32]) on controller RecipeAPI.Controllers.RecipesController (RecipeAPI).
+2025-06-27 15:42:50.777 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Baslik], [t].[Aciklama], [k].[KullaniciAdi], [t].[OlusturmaTarihi]
+FROM [Tarifler] AS [t]
+INNER JOIN [Kullanicilar] AS [k] ON [t].[KullaniciId] = [k].[Id]
+2025-06-27 15:42:50.778 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType1`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], RecipeAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-27 15:42:50.781 +03:00 [INF] Executed action RecipeAPI.Controllers.RecipesController.GetRecipes (RecipeAPI) in 10.2992ms
+2025-06-27 15:42:50.781 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.RecipesController.GetRecipes (RecipeAPI)'
+2025-06-27 15:42:50.781 +03:00 [INF] HTTP GET /api/recipes responded 200 in 19.7302 ms
+2025-06-27 15:42:50.783 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/api/recipes - 200 null application/json; charset=utf-8 24.7846ms
+2025-06-27 15:42:50.797 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/api/recipes - null null
+2025-06-27 15:42:50.797 +03:00 [INF] CORS policy execution successful.
+2025-06-27 15:42:50.798 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.RecipesController.GetRecipes (RecipeAPI)'
+2025-06-27 15:42:50.799 +03:00 [INF] Route matched with {action = "GetRecipes", controller = "Recipes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRecipes(System.String, System.Nullable`1[System.Int32]) on controller RecipeAPI.Controllers.RecipesController (RecipeAPI).
+2025-06-27 15:42:50.830 +03:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Baslik], [t].[Aciklama], [k].[KullaniciAdi], [t].[OlusturmaTarihi]
+FROM [Tarifler] AS [t]
+INNER JOIN [Kullanicilar] AS [k] ON [t].[KullaniciId] = [k].[Id]
+2025-06-27 15:42:50.830 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType1`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], RecipeAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-27 15:42:50.831 +03:00 [INF] Executed action RecipeAPI.Controllers.RecipesController.GetRecipes (RecipeAPI) in 31.2913ms
+2025-06-27 15:42:50.831 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.RecipesController.GetRecipes (RecipeAPI)'
+2025-06-27 15:42:50.831 +03:00 [INF] HTTP GET /api/recipes responded 200 in 33.6251 ms
+2025-06-27 15:42:50.831 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/api/recipes - 200 null application/json; charset=utf-8 34.2344ms
+2025-06-27 15:43:45.949 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5300/api/recipes - null null
+2025-06-27 15:43:45.951 +03:00 [INF] CORS policy execution successful.
+2025-06-27 15:43:45.951 +03:00 [INF] HTTP OPTIONS /api/recipes responded 204 in 0.2403 ms
+2025-06-27 15:43:45.952 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5300/api/recipes - 204 null null 2.5697ms
+2025-06-27 15:43:45.962 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5300/api/recipes - null null
+2025-06-27 15:43:45.963 +03:00 [INF] CORS policy execution successful.
+2025-06-27 15:43:45.964 +03:00 [INF] HTTP OPTIONS /api/recipes responded 204 in 1.0142 ms
+2025-06-27 15:43:45.964 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5300/api/recipes - 204 null null 1.6008ms
+2025-06-27 15:43:45.998 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/api/recipes - null null
+2025-06-27 15:43:45.998 +03:00 [INF] CORS policy execution successful.
+2025-06-27 15:43:45.999 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.RecipesController.GetRecipes (RecipeAPI)'
+2025-06-27 15:43:46.000 +03:00 [INF] Route matched with {action = "GetRecipes", controller = "Recipes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRecipes(System.String, System.Nullable`1[System.Int32]) on controller RecipeAPI.Controllers.RecipesController (RecipeAPI).
+2025-06-27 15:43:46.048 +03:00 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Baslik], [t].[Aciklama], [k].[KullaniciAdi], [t].[OlusturmaTarihi]
+FROM [Tarifler] AS [t]
+INNER JOIN [Kullanicilar] AS [k] ON [t].[KullaniciId] = [k].[Id]
+2025-06-27 15:43:46.049 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType1`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], RecipeAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-27 15:43:46.050 +03:00 [INF] Executed action RecipeAPI.Controllers.RecipesController.GetRecipes (RecipeAPI) in 49.6596ms
+2025-06-27 15:43:46.050 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.RecipesController.GetRecipes (RecipeAPI)'
+2025-06-27 15:43:46.050 +03:00 [INF] HTTP GET /api/recipes responded 200 in 51.3148 ms
+2025-06-27 15:43:46.050 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/api/recipes - 200 null application/json; charset=utf-8 51.8217ms
+2025-06-27 15:43:46.054 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/api/recipes - null null
+2025-06-27 15:43:46.055 +03:00 [INF] CORS policy execution successful.
+2025-06-27 15:43:46.055 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.RecipesController.GetRecipes (RecipeAPI)'
+2025-06-27 15:43:46.056 +03:00 [INF] Route matched with {action = "GetRecipes", controller = "Recipes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRecipes(System.String, System.Nullable`1[System.Int32]) on controller RecipeAPI.Controllers.RecipesController (RecipeAPI).
+2025-06-27 15:43:46.072 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Baslik], [t].[Aciklama], [k].[KullaniciAdi], [t].[OlusturmaTarihi]
+FROM [Tarifler] AS [t]
+INNER JOIN [Kullanicilar] AS [k] ON [t].[KullaniciId] = [k].[Id]
+2025-06-27 15:43:46.072 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType1`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], RecipeAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-27 15:43:46.073 +03:00 [INF] Executed action RecipeAPI.Controllers.RecipesController.GetRecipes (RecipeAPI) in 17.0923ms
+2025-06-27 15:43:46.073 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.RecipesController.GetRecipes (RecipeAPI)'
+2025-06-27 15:43:46.073 +03:00 [INF] HTTP GET /api/recipes responded 200 in 18.3338 ms
+2025-06-27 15:43:46.075 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/api/recipes - 200 null application/json; charset=utf-8 21.064ms
+2025-06-27 15:44:22.606 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5300/api/recipes - null null
+2025-06-27 15:44:22.610 +03:00 [INF] CORS policy execution successful.
+2025-06-27 15:44:22.614 +03:00 [INF] HTTP OPTIONS /api/recipes responded 204 in 6.1080 ms
+2025-06-27 15:44:22.614 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5300/api/recipes - 204 null null 7.8107ms
+2025-06-27 15:44:22.616 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5300/api/recipes - null null
+2025-06-27 15:44:22.617 +03:00 [INF] CORS policy execution successful.
+2025-06-27 15:44:22.618 +03:00 [INF] HTTP OPTIONS /api/recipes responded 204 in 0.7301 ms
+2025-06-27 15:44:22.618 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5300/api/recipes - 204 null null 1.9253ms
+2025-06-27 15:44:22.623 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/api/recipes - null null
+2025-06-27 15:44:22.624 +03:00 [INF] CORS policy execution successful.
+2025-06-27 15:44:22.628 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.RecipesController.GetRecipes (RecipeAPI)'
+2025-06-27 15:44:22.628 +03:00 [INF] Route matched with {action = "GetRecipes", controller = "Recipes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRecipes(System.String, System.Nullable`1[System.Int32]) on controller RecipeAPI.Controllers.RecipesController (RecipeAPI).
+2025-06-27 15:44:22.638 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Baslik], [t].[Aciklama], [k].[KullaniciAdi], [t].[OlusturmaTarihi]
+FROM [Tarifler] AS [t]
+INNER JOIN [Kullanicilar] AS [k] ON [t].[KullaniciId] = [k].[Id]
+2025-06-27 15:44:22.638 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType1`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], RecipeAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-27 15:44:22.640 +03:00 [INF] Executed action RecipeAPI.Controllers.RecipesController.GetRecipes (RecipeAPI) in 7.4308ms
+2025-06-27 15:44:22.640 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.RecipesController.GetRecipes (RecipeAPI)'
+2025-06-27 15:44:22.640 +03:00 [INF] HTTP GET /api/recipes responded 200 in 15.9808 ms
+2025-06-27 15:44:22.640 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/api/recipes - 200 null application/json; charset=utf-8 17.2785ms
+2025-06-27 15:44:22.651 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/api/recipes - null null
+2025-06-27 15:44:22.652 +03:00 [INF] CORS policy execution successful.
+2025-06-27 15:44:22.655 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.RecipesController.GetRecipes (RecipeAPI)'
+2025-06-27 15:44:22.655 +03:00 [INF] Route matched with {action = "GetRecipes", controller = "Recipes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRecipes(System.String, System.Nullable`1[System.Int32]) on controller RecipeAPI.Controllers.RecipesController (RecipeAPI).
+2025-06-27 15:44:22.670 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Baslik], [t].[Aciklama], [k].[KullaniciAdi], [t].[OlusturmaTarihi]
+FROM [Tarifler] AS [t]
+INNER JOIN [Kullanicilar] AS [k] ON [t].[KullaniciId] = [k].[Id]
+2025-06-27 15:44:22.670 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType1`5[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], RecipeAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-27 15:44:22.672 +03:00 [INF] Executed action RecipeAPI.Controllers.RecipesController.GetRecipes (RecipeAPI) in 16.3317ms
+2025-06-27 15:44:22.672 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.RecipesController.GetRecipes (RecipeAPI)'
+2025-06-27 15:44:22.672 +03:00 [INF] HTTP GET /api/recipes responded 200 in 20.5029 ms
+2025-06-27 15:44:22.672 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/api/recipes - 200 null application/json; charset=utf-8 21.3305ms
