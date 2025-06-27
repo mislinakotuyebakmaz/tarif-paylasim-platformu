@@ -1141,3 +1141,361 @@ WHERE [t].[KullaniciId] = @__user_Id_0
 2025-06-27 03:54:14.613 +03:00 [INF] HTTP POST /api/Recipes responded 400 in 286.6843 ms
 2025-06-27 03:54:14.614 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Recipes - 400 null application/problem+json; charset=utf-8 288.8973ms
 2025-06-27 04:00:28.049 +03:00 [INF] Application is shutting down...
+2025-06-27 07:27:35.510 +03:00 [INF] Executed DbCommand (78ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-27 07:27:35.781 +03:00 [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-27 07:27:35.786 +03:00 [INF] Veritabanı başarıyla kontrol edildi/oluşturuldu.
+2025-06-27 07:27:35.901 +03:00 [INF] User profile is available. Using '/Users/mislinakotuyebakmaz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-27 07:27:36.085 +03:00 [INF] Now listening on: http://localhost:5300
+2025-06-27 07:27:36.096 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-27 07:27:36.098 +03:00 [INF] Hosting environment: Development
+2025-06-27 07:27:36.099 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/tarif-paylasim-platformu/backend/RecipeAPI
+2025-06-27 07:27:36.728 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger - null null
+2025-06-27 07:27:36.860 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-27 07:27:36.982 +03:00 [INF] HTTP GET /swagger responded 404 in 122.9185 ms
+2025-06-27 07:27:37.004 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger - 404 0 null 283.8505ms
+2025-06-27 07:27:37.307 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5300/swagger, Response status code: 404
+2025-06-27 07:27:42.279 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger - null null
+2025-06-27 07:27:42.285 +03:00 [INF] HTTP GET /swagger responded 404 in 1.4490 ms
+2025-06-27 07:27:42.286 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger - 404 0 null 6.8078ms
+2025-06-27 07:27:42.287 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5300/swagger, Response status code: 404
+2025-06-27 07:27:42.910 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger - null null
+2025-06-27 07:27:42.917 +03:00 [INF] HTTP GET /swagger responded 404 in 2.4951 ms
+2025-06-27 07:27:42.917 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger - 404 0 null 9.8595ms
+2025-06-27 07:27:42.917 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5300/swagger, Response status code: 404
+2025-06-27 07:28:07.219 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger - null null
+2025-06-27 07:28:07.238 +03:00 [INF] HTTP GET /swagger responded 404 in 0.2563 ms
+2025-06-27 07:28:07.240 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger - 404 0 null 21.193ms
+2025-06-27 07:28:07.240 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5300/swagger, Response status code: 404
+2025-06-27 07:28:07.557 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger - null null
+2025-06-27 07:28:07.558 +03:00 [INF] HTTP GET /swagger responded 404 in 0.2429 ms
+2025-06-27 07:28:07.560 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger - 404 0 null 2.6608ms
+2025-06-27 07:28:07.560 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5300/swagger, Response status code: 404
+2025-06-27 07:31:41.890 +03:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-27 07:31:42.059 +03:00 [INF] Executed DbCommand (39ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-27 07:31:42.062 +03:00 [INF] Veritabanı başarıyla kontrol edildi/oluşturuldu.
+2025-06-27 07:31:42.098 +03:00 [INF] User profile is available. Using '/Users/mislinakotuyebakmaz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-27 07:31:42.319 +03:00 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5300: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Address already in use
+ ---> System.Net.Sockets.SocketException (48): Address already in use
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-06-27 07:34:16.142 +03:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-27 07:34:16.378 +03:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-27 07:34:16.382 +03:00 [INF] Veritabanı başarıyla kontrol edildi/oluşturuldu.
+2025-06-27 07:34:16.455 +03:00 [INF] User profile is available. Using '/Users/mislinakotuyebakmaz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-27 07:34:16.622 +03:00 [INF] Now listening on: http://localhost:5300
+2025-06-27 07:34:16.627 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-27 07:34:16.630 +03:00 [INF] Hosting environment: Development
+2025-06-27 07:34:16.630 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/tarif-paylasim-platformu/backend/RecipeAPI
+2025-06-27 07:35:31.222 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/ - null null
+2025-06-27 07:35:31.342 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/ - 301 0 null 124.6246ms
+2025-06-27 07:35:31.356 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/index.html - null null
+2025-06-27 07:35:31.603 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/index.html - 200 null text/html;charset=utf-8 248.3221ms
+2025-06-27 07:35:31.691 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger-ui.css - null null
+2025-06-27 07:35:31.706 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger-ui-bundle.js - null null
+2025-06-27 07:35:31.708 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/index.js - null null
+2025-06-27 07:35:31.708 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/index.css - null null
+2025-06-27 07:35:31.710 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/index.js - 200 null application/javascript;charset=utf-8 1.8157ms
+2025-06-27 07:35:31.726 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger-ui-standalone-preset.js - null null
+2025-06-27 07:35:31.792 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-06-27 07:35:31.793 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/index.css - 200 202 text/css 84.7004ms
+2025-06-27 07:35:31.925 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-06-27 07:35:31.941 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-06-27 07:35:31.940 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-06-27 07:35:31.962 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger-ui-bundle.js - 200 1485241 text/javascript 255.8699ms
+2025-06-27 07:35:31.961 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger-ui.css - 200 154949 text/css 270.1165ms
+2025-06-27 07:35:31.979 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger-ui-standalone-preset.js - 200 229223 text/javascript 241.7417ms
+2025-06-27 07:35:32.346 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - null null
+2025-06-27 07:35:32.459 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/favicon-32x32.png - null null
+2025-06-27 07:35:32.461 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-06-27 07:35:32.462 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/favicon-32x32.png - 200 628 image/png 2.5635ms
+2025-06-27 07:35:32.656 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 309.8036ms
+2025-06-27 07:36:11.753 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Auth/login - application/json 66
+2025-06-27 07:36:11.779 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-27 07:36:11.884 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.AuthController.Login (RecipeAPI)'
+2025-06-27 07:36:11.972 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[RecipeAPI.Models.DTOs.LoginResponseDto]] Login(RecipeAPI.Models.DTOs.LoginDto) on controller RecipeAPI.Controllers.AuthController (RecipeAPI).
+2025-06-27 07:36:13.174 +03:00 [INF] Executed DbCommand (113ms) [Parameters=[@__loginDto_KullaniciAdiVeyaEmail_0='?' (Size = 50), @__loginDto_KullaniciAdiVeyaEmail_0_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [k].[Id], [k].[AdSoyad], [k].[AktifMi], [k].[Email], [k].[KayitTarihi], [k].[KullaniciAdi], [k].[Sifre]
+FROM [Kullanicilar] AS [k]
+WHERE [k].[KullaniciAdi] = @__loginDto_KullaniciAdiVeyaEmail_0 OR [k].[Email] = @__loginDto_KullaniciAdiVeyaEmail_0_1
+2025-06-27 07:36:13.326 +03:00 [INF] Kullanıcı giriş yaptı: mislina
+2025-06-27 07:36:13.490 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tarifler] AS [t]
+WHERE [t].[KullaniciId] = @__user_Id_0
+2025-06-27 07:36:13.503 +03:00 [INF] Executing OkObjectResult, writing value of type 'RecipeAPI.Models.DTOs.LoginResponseDto'.
+2025-06-27 07:36:13.558 +03:00 [INF] Executed action RecipeAPI.Controllers.AuthController.Login (RecipeAPI) in 1574.4653ms
+2025-06-27 07:36:13.559 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.AuthController.Login (RecipeAPI)'
+2025-06-27 07:36:13.567 +03:00 [INF] HTTP POST /api/Auth/login responded 200 in 1786.8803 ms
+2025-06-27 07:36:13.640 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Auth/login - 200 null application/json; charset=utf-8 1887.1948ms
+2025-06-27 07:38:36.190 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/.well-known/appspecific/com.chrome.devtools.json - null null
+2025-06-27 07:38:36.196 +03:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 1.7699 ms
+2025-06-27 07:38:36.197 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 7.1762ms
+2025-06-27 07:38:36.230 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5300/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2025-06-27 07:38:41.155 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/index.html - null null
+2025-06-27 07:38:41.156 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/index.html - 200 null text/html;charset=utf-8 1.3849ms
+2025-06-27 07:38:41.244 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/.well-known/appspecific/com.chrome.devtools.json - null null
+2025-06-27 07:38:41.252 +03:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 7.4612 ms
+2025-06-27 07:38:41.254 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 9.7884ms
+2025-06-27 07:38:41.255 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5300/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2025-06-27 07:38:41.723 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - null null
+2025-06-27 07:38:41.774 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 50.6516ms
+2025-06-27 07:58:08.622 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/index.html - null null
+2025-06-27 07:58:08.675 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/index.html - 200 null text/html;charset=utf-8 53.9648ms
+2025-06-27 07:58:08.777 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/.well-known/appspecific/com.chrome.devtools.json - null null
+2025-06-27 07:58:08.841 +03:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 16.9154 ms
+2025-06-27 07:58:08.842 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 64.5941ms
+2025-06-27 07:58:08.843 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5300/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2025-06-27 07:58:09.399 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - null null
+2025-06-27 07:58:09.464 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 64.1924ms
+2025-06-27 07:58:40.592 +03:00 [INF] Application is shutting down...
+2025-06-27 07:58:56.981 +03:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-27 07:58:57.402 +03:00 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-27 07:58:57.406 +03:00 [INF] Veritabanı başarıyla kontrol edildi/oluşturuldu.
+2025-06-27 07:58:57.485 +03:00 [INF] User profile is available. Using '/Users/mislinakotuyebakmaz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-27 07:58:57.664 +03:00 [INF] Now listening on: http://localhost:5300
+2025-06-27 07:58:57.682 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-27 07:58:57.691 +03:00 [INF] Hosting environment: Development
+2025-06-27 07:58:57.691 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/tarif-paylasim-platformu/backend/RecipeAPI
+2025-06-27 08:07:50.507 +03:00 [INF] Executed DbCommand (97ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-27 08:07:51.208 +03:00 [INF] Executed DbCommand (143ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-27 08:07:51.222 +03:00 [INF] Veritabanı başarıyla kontrol edildi/oluşturuldu.
+2025-06-27 08:07:51.406 +03:00 [INF] User profile is available. Using '/Users/mislinakotuyebakmaz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-27 08:07:51.733 +03:00 [INF] Now listening on: http://localhost:5300
+2025-06-27 08:07:51.741 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-27 08:07:51.744 +03:00 [INF] Hosting environment: Development
+2025-06-27 08:07:51.745 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/tarif-paylasim-platformu/backend/RecipeAPI
+2025-06-27 08:07:52.632 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger - null null
+2025-06-27 08:07:52.845 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-27 08:07:52.943 +03:00 [INF] HTTP GET /swagger responded 404 in 100.8876 ms
+2025-06-27 08:07:52.959 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger - 404 0 null 339.8774ms
+2025-06-27 08:07:53.063 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5300/swagger, Response status code: 404
+2025-06-27 08:07:54.438 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger - null null
+2025-06-27 08:07:54.450 +03:00 [INF] HTTP GET /swagger responded 404 in 5.4135 ms
+2025-06-27 08:07:54.451 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger - 404 0 null 14.2442ms
+2025-06-27 08:07:54.451 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5300/swagger, Response status code: 404
+2025-06-27 08:08:05.108 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/index.html - null null
+2025-06-27 08:08:05.585 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/index.html - 200 null text/html;charset=utf-8 477.3574ms
+2025-06-27 08:08:05.661 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/.well-known/appspecific/com.chrome.devtools.json - null null
+2025-06-27 08:08:05.690 +03:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 16.2349 ms
+2025-06-27 08:08:05.690 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 29.062ms
+2025-06-27 08:08:05.691 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5300/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2025-06-27 08:08:06.434 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - null null
+2025-06-27 08:08:06.926 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 491.5465ms
+2025-06-27 08:08:56.418 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5300/api/auth/register - null null
+2025-06-27 08:08:56.442 +03:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-06-27 08:08:56.443 +03:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-06-27 08:08:56.443 +03:00 [INF] HTTP OPTIONS /api/auth/register responded 405 in 8.1619 ms
+2025-06-27 08:08:56.443 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5300/api/auth/register - 405 0 null 24.8207ms
+2025-06-27 08:09:15.186 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5300/api/auth/login - null null
+2025-06-27 08:09:15.192 +03:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-06-27 08:09:15.192 +03:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-06-27 08:09:15.193 +03:00 [INF] HTTP OPTIONS /api/auth/login responded 405 in 1.2239 ms
+2025-06-27 08:09:15.193 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5300/api/auth/login - 405 0 null 6.8395ms
+2025-06-27 08:09:41.657 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/index.html - null null
+2025-06-27 08:09:41.671 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/index.html - 200 null text/html;charset=utf-8 13.6132ms
+2025-06-27 08:09:42.104 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - null null
+2025-06-27 08:09:42.135 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 31.1283ms
+2025-06-27 08:10:30.994 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Auth/login - application/json 66
+2025-06-27 08:10:31.001 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.AuthController.Login (RecipeAPI)'
+2025-06-27 08:10:31.076 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[RecipeAPI.Models.DTOs.LoginResponseDto]] Login(RecipeAPI.Models.DTOs.LoginDto) on controller RecipeAPI.Controllers.AuthController (RecipeAPI).
+2025-06-27 08:10:32.552 +03:00 [INF] Executed DbCommand (119ms) [Parameters=[@__loginDto_KullaniciAdiVeyaEmail_0='?' (Size = 50), @__loginDto_KullaniciAdiVeyaEmail_0_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [k].[Id], [k].[AdSoyad], [k].[AktifMi], [k].[Email], [k].[KayitTarihi], [k].[KullaniciAdi], [k].[Sifre]
+FROM [Kullanicilar] AS [k]
+WHERE [k].[KullaniciAdi] = @__loginDto_KullaniciAdiVeyaEmail_0 OR [k].[Email] = @__loginDto_KullaniciAdiVeyaEmail_0_1
+2025-06-27 08:10:32.846 +03:00 [INF] Kullanıcı giriş yaptı: mislina
+2025-06-27 08:10:33.029 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tarifler] AS [t]
+WHERE [t].[KullaniciId] = @__user_Id_0
+2025-06-27 08:10:33.050 +03:00 [INF] Executing OkObjectResult, writing value of type 'RecipeAPI.Models.DTOs.LoginResponseDto'.
+2025-06-27 08:10:33.091 +03:00 [INF] Executed action RecipeAPI.Controllers.AuthController.Login (RecipeAPI) in 1995.4907ms
+2025-06-27 08:10:33.094 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.AuthController.Login (RecipeAPI)'
+2025-06-27 08:10:33.097 +03:00 [INF] HTTP POST /api/Auth/login responded 200 in 2097.2289 ms
+2025-06-27 08:10:33.108 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Auth/login - 200 null application/json; charset=utf-8 2113.2851ms
+2025-06-27 08:10:40.990 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5300/api/auth/login - null null
+2025-06-27 08:10:40.991 +03:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-06-27 08:10:40.991 +03:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-06-27 08:10:40.991 +03:00 [INF] HTTP OPTIONS /api/auth/login responded 405 in 0.6313 ms
+2025-06-27 08:10:40.991 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5300/api/auth/login - 405 0 null 1.1326ms
+2025-06-27 08:11:04.345 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5300/api/auth/login - null null
+2025-06-27 08:11:04.347 +03:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-06-27 08:11:04.348 +03:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-06-27 08:11:04.348 +03:00 [INF] HTTP OPTIONS /api/auth/login responded 405 in 1.2216 ms
+2025-06-27 08:11:04.349 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5300/api/auth/login - 405 0 null 3.5006ms
+2025-06-27 08:13:52.111 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5300/api/auth/register - null null
+2025-06-27 08:13:52.126 +03:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-06-27 08:13:52.127 +03:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-06-27 08:13:52.127 +03:00 [INF] HTTP OPTIONS /api/auth/register responded 405 in 10.4678 ms
+2025-06-27 08:13:52.127 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5300/api/auth/register - 405 0 null 16.6048ms
+2025-06-27 08:18:23.447 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-27 08:18:23.567 +03:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-27 08:18:23.571 +03:00 [INF] Veritabanı başarıyla kontrol edildi/oluşturuldu.
+2025-06-27 08:18:23.609 +03:00 [INF] User profile is available. Using '/Users/mislinakotuyebakmaz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-27 08:18:23.736 +03:00 [INF] Now listening on: http://localhost:5300
+2025-06-27 08:18:23.748 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-27 08:18:23.753 +03:00 [INF] Hosting environment: Development
+2025-06-27 08:18:23.753 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/tarif-paylasim-platformu/backend/RecipeAPI
+2025-06-27 08:18:24.465 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger - null null
+2025-06-27 08:18:24.677 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-27 08:18:24.772 +03:00 [INF] HTTP GET /swagger responded 404 in 97.9008 ms
+2025-06-27 08:18:25.066 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger - 404 0 null 601.1605ms
+2025-06-27 08:18:25.082 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5300/swagger, Response status code: 404
+2025-06-27 08:18:26.812 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger - null null
+2025-06-27 08:18:26.818 +03:00 [INF] HTTP GET /swagger responded 404 in 2.6724 ms
+2025-06-27 08:18:26.819 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger - 404 0 null 6.8389ms
+2025-06-27 08:18:26.819 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5300/swagger, Response status code: 404
+2025-06-27 08:18:31.586 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - null null
+2025-06-27 08:18:31.855 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 268.6689ms
+2025-06-27 08:18:53.980 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5300/api/auth/register - null null
+2025-06-27 08:18:54.003 +03:00 [INF] CORS policy execution successful.
+2025-06-27 08:18:54.016 +03:00 [INF] HTTP OPTIONS /api/auth/register responded 204 in 21.3322 ms
+2025-06-27 08:18:54.016 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5300/api/auth/register - 204 null null 36.9037ms
+2025-06-27 08:18:54.025 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/auth/register - application/json 111
+2025-06-27 08:18:54.029 +03:00 [INF] CORS policy execution successful.
+2025-06-27 08:18:54.037 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.AuthController.Register (RecipeAPI)'
+2025-06-27 08:18:54.099 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[RecipeAPI.Models.DTOs.LoginResponseDto]] Register(RecipeAPI.Models.DTOs.RegisterDto) on controller RecipeAPI.Controllers.AuthController (RecipeAPI).
+2025-06-27 08:18:54.923 +03:00 [INF] Executed DbCommand (73ms) [Parameters=[@__registerDto_KullaniciAdi_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Kullanicilar] AS [k]
+        WHERE [k].[KullaniciAdi] = @__registerDto_KullaniciAdi_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-27 08:18:54.982 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[@__registerDto_Email_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Kullanicilar] AS [k]
+        WHERE [k].[Email] = @__registerDto_Email_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-27 08:18:55.370 +03:00 [INF] Executed DbCommand (41ms) [Parameters=[@p0='?' (Size = 100), @p1='?' (DbType = Boolean), @p2='?' (Size = 100), @p3='?' (DbType = DateTime2), @p4='?' (Size = 50), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Kullanicilar] ([AdSoyad], [AktifMi], [Email], [KayitTarihi], [KullaniciAdi], [Sifre])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2025-06-27 08:18:55.418 +03:00 [INF] Yeni kullanıcı kaydı oluşturuldu: deneme_kullanici
+2025-06-27 08:18:55.494 +03:00 [INF] Executing OkObjectResult, writing value of type 'RecipeAPI.Models.DTOs.LoginResponseDto'.
+2025-06-27 08:18:55.546 +03:00 [INF] Executed action RecipeAPI.Controllers.AuthController.Register (RecipeAPI) in 1440.9955ms
+2025-06-27 08:18:55.548 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.AuthController.Register (RecipeAPI)'
+2025-06-27 08:18:55.551 +03:00 [INF] HTTP POST /api/auth/register responded 200 in 1521.7143 ms
+2025-06-27 08:18:55.561 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/auth/register - 200 null application/json; charset=utf-8 1535.8433ms
