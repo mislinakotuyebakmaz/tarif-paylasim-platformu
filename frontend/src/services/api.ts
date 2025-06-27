@@ -1,10 +1,11 @@
+
 // src/services/api.ts - DOĞRU HALİ
 
 import axios, { AxiosError } from 'axios';
 import { type ApiError } from '../types/api.types'; // Tipi kendi dosyasından alıyoruz
 
 // API Base URL - Backend'inin çalıştığı DOĞRU HTTP adresi
-const API_BASE_URL = 'http://localhost:5300/api'; // <-- YAPILAN TEK DEĞİŞİKLİK BU!
+const API_BASE_URL = 'http://localhost:5301/api'; // <-- YAPILAN TEK DEĞİŞİKLİK BU!
 
 // Axios instance oluştur
 const api = axios.create({
