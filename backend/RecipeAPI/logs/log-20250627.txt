@@ -1066,3 +1066,78 @@ WHERE [t].[Id] = @__id_0
 2025-06-27 03:17:32.722 +03:00 [INF] HTTP GET /api/Recipes/3 responded 404 in 38.6565 ms
 2025-06-27 03:17:32.723 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/api/Recipes/3 - 404 null application/problem+json; charset=utf-8 39.9424ms
 2025-06-27 03:32:18.137 +03:00 [INF] Application is shutting down...
+2025-06-27 03:49:03.215 +03:00 [INF] Executed DbCommand (64ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-27 03:49:03.497 +03:00 [INF] Executed DbCommand (58ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-27 03:49:03.501 +03:00 [INF] Veritabanı başarıyla kontrol edildi/oluşturuldu.
+2025-06-27 03:49:03.579 +03:00 [INF] User profile is available. Using '/Users/mislinakotuyebakmaz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-27 03:49:03.732 +03:00 [INF] Now listening on: http://localhost:5300
+2025-06-27 03:49:03.741 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-27 03:49:03.895 +03:00 [INF] Hosting environment: Development
+2025-06-27 03:49:03.896 +03:00 [INF] Content root path: /Users/mislinakotuyebakmaz/tarif-paylasim-platformu/backend/RecipeAPI
+2025-06-27 03:49:08.415 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - null null
+2025-06-27 03:49:09.564 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 1163.3815ms
+2025-06-27 03:50:01.539 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Recipes - application/json 245
+2025-06-27 03:50:01.564 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-06-27 03:50:01.657 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-06-27 03:50:01.681 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-27 03:50:01.701 +03:00 [INF] HTTP POST /api/Recipes responded 401 in 135.7423 ms
+2025-06-27 03:50:01.708 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Recipes - 401 0 null 168.8188ms
+2025-06-27 03:50:29.929 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Recipes - application/json 245
+2025-06-27 03:50:29.949 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-06-27 03:50:29.950 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-27 03:50:29.950 +03:00 [INF] HTTP POST /api/Recipes responded 401 in 18.1401 ms
+2025-06-27 03:50:29.951 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Recipes - 401 0 null 21.9836ms
+2025-06-27 03:51:17.364 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Recipes - application/json 231
+2025-06-27 03:51:17.371 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-06-27 03:51:17.372 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-27 03:51:17.376 +03:00 [INF] HTTP POST /api/Recipes responded 401 in 8.8086 ms
+2025-06-27 03:51:17.376 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Recipes - 401 0 null 12.6679ms
+2025-06-27 03:52:33.520 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/index.html - null null
+2025-06-27 03:52:33.834 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/index.html - 200 null text/html;charset=utf-8 314.0987ms
+2025-06-27 03:52:34.074 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - null null
+2025-06-27 03:52:34.173 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5300/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 98.632ms
+2025-06-27 03:52:56.155 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Auth/login - application/json 66
+2025-06-27 03:52:56.171 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.AuthController.Login (RecipeAPI)'
+2025-06-27 03:52:56.236 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[RecipeAPI.Models.DTOs.LoginResponseDto]] Login(RecipeAPI.Models.DTOs.LoginDto) on controller RecipeAPI.Controllers.AuthController (RecipeAPI).
+2025-06-27 03:52:57.789 +03:00 [INF] Executed DbCommand (61ms) [Parameters=[@__loginDto_KullaniciAdiVeyaEmail_0='?' (Size = 50), @__loginDto_KullaniciAdiVeyaEmail_0_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [k].[Id], [k].[AdSoyad], [k].[AktifMi], [k].[Email], [k].[KayitTarihi], [k].[KullaniciAdi], [k].[Sifre]
+FROM [Kullanicilar] AS [k]
+WHERE [k].[KullaniciAdi] = @__loginDto_KullaniciAdiVeyaEmail_0 OR [k].[Email] = @__loginDto_KullaniciAdiVeyaEmail_0_1
+2025-06-27 03:52:57.964 +03:00 [INF] Kullanıcı giriş yaptı: mislina
+2025-06-27 03:52:58.114 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Tarifler] AS [t]
+WHERE [t].[KullaniciId] = @__user_Id_0
+2025-06-27 03:52:58.141 +03:00 [INF] Executing OkObjectResult, writing value of type 'RecipeAPI.Models.DTOs.LoginResponseDto'.
+2025-06-27 03:52:58.201 +03:00 [INF] Executed action RecipeAPI.Controllers.AuthController.Login (RecipeAPI) in 1956.5418ms
+2025-06-27 03:52:58.203 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.AuthController.Login (RecipeAPI)'
+2025-06-27 03:52:58.204 +03:00 [INF] HTTP POST /api/Auth/login responded 200 in 2048.1798 ms
+2025-06-27 03:52:58.249 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Auth/login - 200 null application/json; charset=utf-8 2094.5362ms
+2025-06-27 03:54:14.325 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5300/api/Recipes - application/json 236
+2025-06-27 03:54:14.436 +03:00 [INF] Executing endpoint 'RecipeAPI.Controllers.RecipesController.CreateRecipe (RecipeAPI)'
+2025-06-27 03:54:14.462 +03:00 [INF] Route matched with {action = "CreateRecipe", controller = "Recipes"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateRecipe(RecipeAPI.Models.DTOs.RecipeCreateDto) on controller RecipeAPI.Controllers.RecipesController (RecipeAPI).
+2025-06-27 03:54:14.514 +03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-06-27 03:54:14.613 +03:00 [INF] Executed action RecipeAPI.Controllers.RecipesController.CreateRecipe (RecipeAPI) in 150.0651ms
+2025-06-27 03:54:14.613 +03:00 [INF] Executed endpoint 'RecipeAPI.Controllers.RecipesController.CreateRecipe (RecipeAPI)'
+2025-06-27 03:54:14.613 +03:00 [INF] HTTP POST /api/Recipes responded 400 in 286.6843 ms
+2025-06-27 03:54:14.614 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5300/api/Recipes - 400 null application/problem+json; charset=utf-8 288.8973ms
+2025-06-27 04:00:28.049 +03:00 [INF] Application is shutting down...

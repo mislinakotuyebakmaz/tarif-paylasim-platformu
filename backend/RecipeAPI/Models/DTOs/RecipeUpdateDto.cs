@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 namespace RecipeAPI.Models.DTOs
 {
     public class RecipeUpdateDto
