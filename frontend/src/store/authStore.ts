@@ -6,11 +6,12 @@ interface AuthState {
   token: string | null;
   isAuthenticated: boolean;
   setAuth: (user: UserDto, token: string) => void;
+  updateUser: (userData: Partial<UserDto>) => void;
   logout: () => void;
   loadFromStorage: () => void;
 }
 
-export const useAuthStore = create<AuthState>((set) => ({
+export const useAuthStore = create<AuthState>((set, get) => ({
   user: null,
   token: null,
   isAuthenticated: false,
@@ -19,6 +20,15 @@ export const useAuthStore = create<AuthState>((set) => ({
     localStorage.setItem('user', JSON.stringify(user));
     localStorage.setItem('token', token);
     set({ user, token, isAuthenticated: true });
+  },
+
+  updateUser: (userData: Partial<UserDto>) => {
+    const currentUser = get().user;
+    if (currentUser) {
+      const updatedUser = { ...currentUser, ...userData };
+      localStorage.setItem('user', JSON.stringify(updatedUser));
+      set({ user: updatedUser });
+    }
   },
 
   logout: () => {

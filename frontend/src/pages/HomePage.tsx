@@ -1,67 +1,52 @@
 // src/pages/HomePage.tsx
 
-import { useEffect, useState } from 'react';
-import { type RecipeDto } from '../types'; // Tiplerimizi import ediyoruz
-import { recipeService } from '../services/recipeService'; // API servisimizi import ediyoruz
-import RecipeCard from '../components/RecipeCard'; // Az önce oluşturduğumuz kart bileşenini import ediyoruz
+import { Link } from 'react-router-dom';
+import RecipeCard from '../components/RecipeCard';
+import { useQuery } from '@tanstack/react-query';
+import { recipeService } from '../services/recipeService';
 
 export default function HomePage() {
-  // Bu sayfanın ihtiyaç duyduğu durumları (state) tanımlıyoruz:
-  // 1. recipes: API'den gelecek tariflerin listesini tutacak.
-  // 2. isLoading: Veri yüklenirken "Yükleniyor..." mesajı göstermek için.
-  // 3. error: Bir hata oluşursa hata mesajını tutmak için.
-  const [recipes, setRecipes] = useState<RecipeDto[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  // React Query ile en son eklenen 4 tarifi çekelim (backend desteği varsayılıyor)
+  // Şimdilik normal getAll() ile ilk 4'ünü alacağız.
+  const { data: recipes, isLoading } = useQuery({
+    queryKey: ['latestRecipes'],
+    queryFn: async () => {
+      const allRecipes = await recipeService.getAll();
+      return allRecipes.slice(0, 4); // Sadece ilk 4 tarifi al
+    },
+  });
 
-  // useEffect, bu bileşen ekrana ilk çizildiğinde sadece bir kez çalışacak.
-  useEffect(() => {
-    // API'den verileri çeken asenkron bir fonksiyon tanımlıyoruz.
-    const fetchRecipes = async () => {
-      try {
-        setError(null); // Başlarken eski hataları temizle
-        setIsLoading(true); // Veri çekme işlemi başladı
-        
-        // recipeService'i kullanarak API'den tüm tarifleri istiyoruz.
-        const data = await recipeService.getAll();
-        setRecipes(data); // Gelen veriyi 'recipes' state'ine kaydediyoruz.
-
-      } catch (err) {
-        console.error("Tarifler getirilemedi:", err);
-        setError("Tarifler yüklenirken bir sorun oluştu.");
-      } finally {
-        // İşlem başarılı da olsa, hatalı da olsa yükleme durumunu bitiriyoruz.
-        setIsLoading(false);
-      }
-    };
-
-    fetchRecipes(); // Tanımladığımız fonksiyonu çalıştırıyoruz.
-  }, []); // Boş dependency array '[]', bu etkinin sadece bir kez çalışmasını sağlar.
-
-  // Eğer hala veri yükleniyorsa, kullanıcıya bir mesaj göster.
-  if (isLoading) {
-    return <div className="text-center text-white text-xl py-20">Yükleniyor...</div>;
-  }
-
-  // Eğer bir hata oluştuysa, kullanıcıya hata mesajını göster.
-  if (error) {
-    return <div className="text-center text-red-500 text-xl py-20">{error}</div>;
-  }
-
-  // Veriler başarıyla yüklendiğinde, ana içeriği göster.
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl sm:text-5xl font-extrabold text-center text-white mb-10">
-        En Lezzetli Tarifler
-      </h1>
-      
-      {/* Tariflerin listeleneceği grid (ızgara) yapısı */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-        {/* 'recipes' dizisindeki her bir tarif için bir RecipeCard oluşturuyoruz */}
-        {recipes.map((recipe) => (
-          <RecipeCard key={recipe.id} recipe={recipe} />
-        ))}
+    <>
+      {/* Hero (Karşılama) Bölümü */}
+      <div className="text-center py-20 px-4 bg-slate-800 rounded-lg my-8">
+        <h1 className="text-5xl font-extrabold text-white">Tarif Defteri'ne Hoş Geldiniz</h1>
+        <p className="text-xl text-slate-300 mt-4 max-w-2xl mx-auto">
+          Binlerce lezzetli tarifi keşfedin, kendi tariflerinizi paylaşın ve mutfaktaki yeteneğinizi gösterin.
+        </p>
+        <div className="mt-8">
+          <Link 
+            to="/recipes" 
+            className="bg-amber-500 text-slate-900 font-bold py-3 px-8 rounded-full text-lg hover:bg-amber-400 transition-transform transform hover:scale-105"
+          >
+            Tüm Tarifleri Keşfet
+          </Link>
+        </div>
       </div>
-    </div>
+
+      {/* En Yeni Tarifler Bölümü */}
+      <div className="py-16">
+        <h2 className="text-3xl font-bold text-center text-white mb-10">En Yeni Tarifler</h2>
+        {isLoading ? (
+          <p className="text-center text-white">Tarifler yükleniyor...</p>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {recipes?.map(recipe => (
+              <RecipeCard key={recipe.id} recipe={recipe} />
+            ))}
+          </div>
+        )}
+      </div>
+    </>
   );
 }

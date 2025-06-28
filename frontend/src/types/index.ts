@@ -1,16 +1,17 @@
-// src/types/index.ts - SON VE KESİN HALİ
-
-interface LoginDto {
+// Auth Types
+export interface LoginDto {
   kullaniciAdiVeyaEmail: string;
   sifre: string;
 }
-interface RegisterDto {
+
+export interface RegisterDto {
   kullaniciAdi: string;
   email: string;
   sifre: string;
   adSoyad: string;
 }
-interface UserDto {
+
+export interface UserDto {
   id: number;
   kullaniciAdi: string;
   email: string;
@@ -18,12 +19,15 @@ interface UserDto {
   kayitTarihi: string;
   tarifSayisi: number;
 }
-interface LoginResponseDto {
+
+export interface LoginResponseDto {
   token: string;
   tokenExpiration: string;
   user: UserDto;
 }
-interface RecipeCreateDto {
+
+// Recipe Types
+export interface RecipeCreateDto {
   baslik: string;
   aciklama: string;
   hazirlanis: string;
@@ -35,7 +39,8 @@ interface RecipeCreateDto {
   zorlukDerecesi?: string;
   resimUrl?: string;
 }
-interface RecipeUpdateDto {
+
+export interface RecipeUpdateDto {
   baslik?: string;
   aciklama?: string;
   hazirlanis?: string;
@@ -47,7 +52,8 @@ interface RecipeUpdateDto {
   zorlukDerecesi?: string;
   resimUrl?: string;
 }
-interface RecipeDto {
+
+export interface RecipeDto {
   id: number;
   baslik: string;
   aciklama: string;
@@ -68,14 +74,18 @@ interface RecipeDto {
   ortalamaPuan?: number;
   aktifMi: boolean;
 }
-interface CategoryDto {
+
+// Category Types
+export interface CategoryDto {
   id: number;
   ad: string;
   aciklama?: string;
   tarifSayisi?: number;
   aktifMi: boolean;
 }
-interface CommentDto {
+
+// Comment Types
+export interface CommentDto {
   id: number;
   yorum: string;
   yorumTarihi: string;
@@ -83,31 +93,24 @@ interface CommentDto {
   kullaniciAdi?: string;
   tarifId: number;
 }
-interface RatingDto {
+
+// Rating Types
+export interface RatingDto {
   id: number;
   puan: number;
   kullaniciId: number;
   tarifId: number;
   olusturmaTarihi: string;
 }
-interface Favorite { // Bu da eksik kalmasın
-    id: number;
-    kullaniciId: number;
-    tarifId: number;
+
+// API Response Types
+export interface ApiResponse<T> {
+  data: T;
+  success: boolean;
+  message?: string;
 }
 
-// Şimdi tüm bu tipleri tek bir yerden, 'type-only' olarak export ediyoruz.
-export type {
-  LoginDto,
-  RegisterDto,
-  UserDto,
-  LoginResponseDto,
-  RecipeCreateDto,
-  RecipeUpdateDto,
-  RecipeDto,
-  CategoryDto,
-  CommentDto,
-  RatingDto,
-  Favorite, // Eklendi
-    // Eklendi
-};
+export interface ApiError {
+  message: string;
+  errors?: Record<string, string[]>;
+}
