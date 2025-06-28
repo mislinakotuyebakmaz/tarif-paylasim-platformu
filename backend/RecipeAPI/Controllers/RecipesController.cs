@@ -99,6 +99,27 @@ namespace RecipeAPI.Controllers
             return Ok(recipe);
         }
 
+        // --- YENİ EKLENEN: Belirli bir kullanıcının tariflerini getir ---
+        [HttpGet("user/{userId}")]
+        public async Task<IActionResult> GetUserRecipes(int userId)
+        {
+            try
+            {
+                var recipes = await _context.Tarifler
+                    .Where(r => r.KullaniciId == userId && r.AktifMi == true)
+                    .Include(r => r.Kullanici)
+                    .Include(r => r.Kategori)
+                    .OrderByDescending(r => r.OlusturmaTarihi)
+                    .ToListAsync();
+
+                return Ok(recipes);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "Kullanıcı tarifleri getirilirken bir hata oluştu.", error = ex.Message });
+            }
+        }
+
         // --- PUT: Var olan bir tarifi güncelle ---
         [HttpPut("{id}")]
         [Authorize]

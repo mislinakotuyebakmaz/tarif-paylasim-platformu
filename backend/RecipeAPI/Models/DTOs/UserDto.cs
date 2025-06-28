@@ -18,14 +18,14 @@ namespace RecipeAPI.Models.DTOs
         public string KullaniciAdi { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
         public string AdSoyad { get; set; } = string.Empty;
-        public DateTime KayitTarihi { get; set; }
+        public string KayitTarihi { get; set; } = string.Empty; // DateTime → string DEĞİŞTİ
         public int TarifSayisi { get; set; }
     }
 
     public class LoginResponseDto
     {
         public string Token { get; set; } = string.Empty;
-        public DateTime TokenExpiration { get; set; }
+        public string TokenExpiration { get; set; } = string.Empty; // DateTime → string DEĞİŞTİ
         public UserDto User { get; set; } = null!;
     }
 }
